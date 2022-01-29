@@ -1,6 +1,11 @@
 .markdown-body li {
   margin: 0.3em 0;
 }
+.markdown-body img {
+  max-width: 100%;
+  max-height: 400px;
+  margin-bottom: 1em;
+}
 .markdown-body code {
   padding: 0.2em 0.4em;
   margin: 0;
@@ -8,4 +13,9 @@
   background-color: #f6f8fa;
   border-radius: 6px;
   color: #24292f;
+}
+.tag-list-count,
+.category-list-count,
+.archive-list-count {
+  margin-left: 1em;
 }

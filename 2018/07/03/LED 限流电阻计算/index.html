@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  
+<link rel="stylesheet" href="/lib/bootstrap-5.1.3/css/bootstrap.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  
+  
+    
+<link rel="stylesheet" href="/css/github.css">
+
+    
+  
+
+  <title>LED 限流电阻计算 - 风灯零乱</title>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+  <body class="container col-lg-8 col-md-10 justify-content-center">
+    <header>
+  <nav class="navbar sticky-top navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">风灯零乱</a>
+
+      <ul class="nav text-uppercase">
+         
+        <li class="nav-item">
+          <a class="nav-link" href="/archives"
+            >archives</a
+          >
+        </li>
+         
+        <li class="nav-item">
+          <a class="nav-link" href="/categories"
+            >categories</a
+          >
+        </li>
+         
+        <li class="nav-item">
+          <a class="nav-link" href="/tags"
+            >tags</a
+          >
+        </li>
+        
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+    <section class="container-fluid">
+  <div class="pb-3 pt-2">
+    <h1>
+      LED 限流电阻计算
+    </h1>
+    <time class="link-secondary fw-light">2018-07-03</time>
+  </div>
+
+  <main class="markdown-body">
+    <p>LED 发光二极管主要参数：</p>
+<ul>
+<li><code>PM</code> 允许功耗，超过会烧毁</li>
+<li><code>IFM</code> 最大正向电流，超过会烧毁</li>
+<li><code>VRM</code> 最大反向电压，超过会击穿</li>
+<li><code>IF</code> 正向导通电流，一般为 <code>0.6 * IFM</code></li>
+<li><code>VF</code> 正向导通电压，一般为 <code>IF = 20mA</code> 时取得，<code>1.4V - 3V</code> 不同颜色电压不同</li>
+<li><code>LED</code> 正常工作不应超过 <code>PM</code>、<code>IFM</code>、<code>VRM</code> 这三个极限参数。</li>
+</ul>
+<h2 id="限流电阻计算"><a href="#限流电阻计算" class="headerlink" title="限流电阻计算"></a>限流电阻计算</h2><p><img src="/images/2020/07/20190722121759.png"></p>
+<p>假设 <code>LED1</code> <code>VF=3V</code>、<code>IF=20mA</code>，电源电压为 <code>Vcc=5V</code>。</p>
+<p>则 <code>R1</code> 上分得电压 <code>Ur1 = Vcc - VF = 5 - 3 = 2V</code></p>
+<p>要是使得 <code>LED1</code> 上的电流为 <code>20mA</code>，根据 <code>R = U / I</code></p>
+<p>则 <code>R1</code> 的电阻值应该为 <code>R1 = Ur1 / IF = 2 / 0.02 = 100Ω</code></p>
+<h2 id="计算公式"><a href="#计算公式" class="headerlink" title="计算公式"></a>计算公式</h2><p>得到 LED 限流电阻计算公式为：<code>R = (UV - VF) / IF</code></p>
+<ul>
+<li><code>R</code> 限流电阻阻值；</li>
+<li><code>UV</code> 电源电压；</li>
+<li><code>VF</code> 为 LED 正向导通电压；</li>
+<li><code>IF</code> 为 LED 正向导通电流；</li>
+</ul>
+
+  </main>
+</sectione>
+
+    
+<script src="/lib/bootstrap-5.1.3/js/bootstrap.bundle.min.js"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  
+<link rel="stylesheet" href="/lib/bootstrap-5.1.3/css/bootstrap.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  
+  
+    
+<link rel="stylesheet" href="/css/github.css">
+
+    
+  
+
+  <title>Javascript 中 let 声明的全局变量不在 window 上 - 风灯零乱</title>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+  <body class="container col-lg-8 col-md-10 justify-content-center">
+    <header>
+  <nav class="navbar sticky-top navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">风灯零乱</a>
+
+      <ul class="nav text-uppercase">
+         
+        <li class="nav-item">
+          <a class="nav-link" href="/archives"
+            >archives</a
+          >
+        </li>
+         
+        <li class="nav-item">
+          <a class="nav-link" href="/categories"
+            >categories</a
+          >
+        </li>
+         
+        <li class="nav-item">
+          <a class="nav-link" href="/tags"
+            >tags</a
+          >
+        </li>
+        
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+    <section class="container-fluid">
+  <div class="pb-3 pt-2">
+    <h1>
+      Javascript 中 let 声明的全局变量不在 window 上
+    </h1>
+    <time class="link-secondary fw-light">2021-02-27</time>
+  </div>
+
+  <main class="markdown-body">
+    <p><code>GlobalEnv</code> 是一个复合环境，由 <code>global（顶层对象）</code>和 <code>declsEnv（一般声明环境）</code>组合而成。</p>
+<p>在 ES6 之前，顶层对象的属性与全局变量是等价的，顶层对象的属性与全局变量挂钩，被认为是 JavaScript 语言最大的设计败笔之一。</p>
+<p>ES6 为了改变这一点，一方面规定，为了保持兼容性，<code>var</code> 命令和 <code>function</code> 命令声明的全局变量，依旧是顶层对象的属性。</p>
+<p>另一方面规定，<code>let</code> 命令、<code>const</code> 命令、<code>class</code> 命令声明的全局变量，不属于顶层对象的属性，而是在一般声明环境 <code>declsEnv</code> 中。</p>
+<p>通过 <code>var</code> 声明的变量在 <code>Global</code> 作用域中 ⬇️</p>
+<p><img src="/images/2021/03/var.png" alt="通过 var 定义"></p>
+<p>通过 <code>let</code> 声明变量时则在 <code>Script</code> 作用域中 ⬇️</p>
+<p><img src="/images/2021/03/let.png" alt="通过 let 定义"></p>
+
+  </main>
+</sectione>
+
+    
+<script src="/lib/bootstrap-5.1.3/js/bootstrap.bundle.min.js"></script>
+
+
+  </body>
+</html>

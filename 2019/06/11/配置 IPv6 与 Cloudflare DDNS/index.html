@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  
+<link rel="stylesheet" href="/lib/bootstrap-5.1.3/css/bootstrap.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  
+  
+    
+<link rel="stylesheet" href="/css/github.css">
+
+    
+  
+
+  <title>配置 IPv6 与 Cloudflare DDNS - 风灯零乱</title>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+  <body class="container col-lg-8 col-md-10 justify-content-center">
+    <header>
+  <nav class="navbar sticky-top navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">风灯零乱</a>
+
+      <ul class="nav text-uppercase">
+         
+        <li class="nav-item">
+          <a class="nav-link" href="/archives"
+            >archives</a
+          >
+        </li>
+         
+        <li class="nav-item">
+          <a class="nav-link" href="/categories"
+            >categories</a
+          >
+        </li>
+         
+        <li class="nav-item">
+          <a class="nav-link" href="/tags"
+            >tags</a
+          >
+        </li>
+        
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+    <section class="container-fluid">
+  <div class="pb-3 pt-2">
+    <h1>
+      配置 IPv6 与 Cloudflare DDNS
+    </h1>
+    <time class="link-secondary fw-light">2019-06-11</time>
+  </div>
+
+  <main class="markdown-body">
+    <p>家里电信 200M 光纤宽带没有 IPv4 外网地址，尝试获取 IPv6 地址成功后，内网设备能外网直连了～</p>
+<h2 id="配置-IPv6"><a href="#配置-IPv6" class="headerlink" title="配置 IPv6"></a>配置 IPv6</h2><p>超级管理员密码 <code>nE7jA%5m</code> 登陆光猫，网络 – 网络设置 – IP模式 选择 <code>IPv4%IPv6</code>。</p>
+<p>路由器启用 IPv6，连接类型 <code>Native DHCPv6、Stateless:RA</code>，DNS 自动获取，内网 Ipv6 地址通过 <code>DHCPv6</code> 获取。</p>
+<p>重新拨号，此时路由器与内网设备应该能正常获取到 IPv6 地址。</p>
+<p><a target="_blank" rel="noopener" href="https://ipv6-test.com/">IPv6 测试地址</a></p>
+<h2 id="Cloudflare-DDNS"><a href="#Cloudflare-DDNS" class="headerlink" title="Cloudflare DDNS"></a>Cloudflare DDNS</h2><p>IPv6 为动态获取，需要做动态域名解析，确保外网能通过域名连接家里的设备。</p>
+<p>可以通过 Cloudflare 提供的 <a target="_blank" rel="noopener" href="https://api.cloudflare.com/#dns-records-for-a-zone-update-dns-record">API</a> 进行更新。</p>
+<h3 id="DDNS"><a href="#DDNS" class="headerlink" title="DDNS"></a>DDNS</h3><p>对于 Padavan、OpenWrt 等比较开放的路由器固件，可以使用下面的 <a target="_blank" rel="noopener" href="https://gist.github.com/waynegongcn/6349d420789bb70aaebc7ce7eb1daccf">Shell 脚本</a>进行 DDNS:</p>
+<p><code>zoneId</code>、<code>dnsId</code> 分别通过 <a target="_blank" rel="noopener" href="https://api.cloudflare.com/#zone-list-zones">List Zones</a> 与 <a target="_blank" rel="noopener" href="https://api.cloudflare.com/#dns-records-for-a-zone-list-dns-records">List DNS Records</a> 两个接口获取。</p>
+<pre><code class="hljs bash"><span class="hljs-meta">#!/bin/sh</span>
+EMAIL=
+CF_API_KEY=
+CF_ZONE_ID=
+CF_DNS_ID=
+DNS_RECORD=
+RECORD_TYPE=AAAA
+ROUTER_NETWORK_DEVICE=
+<span class="hljs-comment"># 获取当前 DNS 记录</span>
+resolving_ip=$(curl -k -X GET <span class="hljs-string">&quot;https://api.cloudflare.com/client/v4/zones/<span class="hljs-variable">$&#123;CF_ZONE_ID&#125;</span>/dns_records/<span class="hljs-variable">$&#123;CF_DNS_ID&#125;</span>&quot;</span> -H <span class="hljs-string">&quot;X-Auth-Email:<span class="hljs-variable">$&#123;EMAIL&#125;</span>&quot;</span> -H <span class="hljs-string">&quot;X-Auth-Key:<span class="hljs-variable">$&#123;CF_API_KEY&#125;</span>&quot;</span> -H <span class="hljs-string">&quot;Content-Type: application/json&quot;</span> | awk -F <span class="hljs-string">&#x27;&quot;&#x27;</span> <span class="hljs-string">&#x27;&#123;print $18&#125;&#x27;</span>)
+<span class="hljs-comment"># 获取本机 ipv6 地址</span>
+current_ip=$(ip -o -6 addr list <span class="hljs-variable">$ROUTER_NETWORK_DEVICE</span> | awk <span class="hljs-string">&#x27;&#123;print $4&#125;&#x27;</span> | cut -d/ -f1 | head -n 1)
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;当前解析 IP: <span class="hljs-variable">$resolving_ip</span>&quot;</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;当前本机 IP: <span class="hljs-variable">$current_ip</span>&quot;</span>
+<span class="hljs-comment"># 没有变化</span>
+<span class="hljs-keyword">if</span> [ <span class="hljs-variable">$resolving_ip</span> = <span class="hljs-variable">$current_ip</span> ];
+    <span class="hljs-keyword">then</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;IP 未变化&quot;</span>
+<span class="hljs-comment"># 修改 DNS 记录</span>
+<span class="hljs-keyword">else</span>
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;更新解析记录&quot;</span>
+    curl -k -X PUT <span class="hljs-string">&quot;https://api.cloudflare.com/client/v4/zones/<span class="hljs-variable">$&#123;CF_ZONE_ID&#125;</span>/dns_records/<span class="hljs-variable">$&#123;CF_DNS_ID&#125;</span>&quot;</span> -H <span class="hljs-string">&quot;X-Auth-Email:<span class="hljs-variable">$&#123;EMAIL&#125;</span>&quot;</span> -H <span class="hljs-string">&quot;X-Auth-Key:<span class="hljs-variable">$&#123;CF_API_KEY&#125;</span>&quot;</span> -H <span class="hljs-string">&quot;Content-Type: application/json&quot;</span> --data <span class="hljs-string">&#x27;&#123;&quot;type&quot;:&quot;&#x27;</span><span class="hljs-variable">$RECORD_TYPE</span><span class="hljs-string">&#x27;&quot;,&quot;name&quot;:&quot;&#x27;</span><span class="hljs-variable">$DNS_RECORD</span><span class="hljs-string">&#x27;&quot;,&quot;content&quot;:&quot;&#x27;</span><span class="hljs-variable">$current_ip</span><span class="hljs-string">&#x27;&quot;&#125;&#x27;</span>
+<span class="hljs-keyword">fi</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot; &quot;</span></code></pre>
+
+<h3 id="定时更新"><a href="#定时更新" class="headerlink" title="定时更新"></a>定时更新</h3><p>使用 crontab 定时更新解析记录。</p>
+<pre><code class="hljs plaintext">0 * * * * /path/cloudflare_ddns.sh &gt;&gt; /path/ddns.log</code></pre>
+
+<p>每小时检查 IPv6 地址是否变化，然后更新解析记录，并输出日志到文件。</p>
+
+  </main>
+</sectione>
+
+    
+<script src="/lib/bootstrap-5.1.3/js/bootstrap.bundle.min.js"></script>
+
+
+  </body>
+</html>

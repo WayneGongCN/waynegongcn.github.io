@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  
+<link rel="stylesheet" href="/lib/bootstrap-5.1.3/css/bootstrap.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  
+  
+    
+<link rel="stylesheet" href="/css/github.css">
+
+    
+  
+
+  <title>尾调用优化 - 风灯零乱</title>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+  <body class="container col-lg-8 col-md-10 justify-content-center">
+    <header>
+  <nav class="navbar sticky-top navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">风灯零乱</a>
+
+      <ul class="nav text-uppercase">
+         
+        <li class="nav-item">
+          <a class="nav-link" href="/archives"
+            >archives</a
+          >
+        </li>
+         
+        <li class="nav-item">
+          <a class="nav-link" href="/categories"
+            >categories</a
+          >
+        </li>
+         
+        <li class="nav-item">
+          <a class="nav-link" href="/tags"
+            >tags</a
+          >
+        </li>
+        
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+    <section class="container-fluid">
+  <div class="pb-3 pt-2">
+    <h1>
+      尾调用优化
+    </h1>
+    <time class="link-secondary fw-light">2018-10-11</time>
+  </div>
+
+  <main class="markdown-body">
+    <p>当函数的调用层数非常多时，需要同时保存成千上百个调用记录，调用栈会消耗不少内存，甚容易导致<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%A0%88%E6%BA%A2%E5%87%BA">栈溢出</a>。</p>
+<p>尾调用的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%91%BC%E5%8F%AB%E5%A0%86%E7%96%8A">调用栈</a>则特别易于优化，从而可减少内存空间的使用，也能提高运行速度。</p>
+<h2 id="尾调用"><a href="#尾调用" class="headerlink" title="尾调用"></a>尾调用</h2><p>尾调用 (tail call) 指的是<strong>一个函数的最后一条语句是一个返回调用函数的语句</strong>。</p>
+<pre><code class="hljs javascript"><span class="hljs-comment">// 属于尾调用</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bar</span>(<span class="hljs-params">data</span>) </span>&#123;
+  <span class="hljs-keyword">if</span> ( a(data) ) &#123;
+    <span class="hljs-keyword">return</span> b(data);
+  &#125;
+  <span class="hljs-keyword">return</span> c(data);
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo</span>(<span class="hljs-params">data</span>) </span>&#123;
+  a(data);
+  <span class="hljs-keyword">return</span> b(data);
+&#125;</code></pre>
+
+<pre><code class="hljs javascript"><span class="hljs-comment">// 不属于尾调用</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo1</span>(<span class="hljs-params">data</span>) </span>&#123;
+  <span class="hljs-keyword">return</span> a(data) + <span class="hljs-number">1</span>;
+&#125;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">foo2</span>(<span class="hljs-params">data</span>) </span>&#123;
+  <span class="hljs-keyword">var</span> ret = a(data);
+  <span class="hljs-keyword">return</span> ret;
+&#125;</code></pre>
+
+<h3 id="调用栈"><a href="#调用栈" class="headerlink" title="调用栈"></a>调用栈</h3><p>当一个函数被调用时，函数的调用位置与返回位置被保存在调用栈中，调用结束时才能带着返回值回到该位置。</p>
+<p>在尾调用这种特殊情形中，计算机理论上可以不需要记住尾调用的位置而从被调用的函数直接带着返回值返回调用函数的返回位置。</p>
+<p>尾调用消除即是在不改变当前调用栈（也不添加新的返回位置）的情况下跳到新函数的一种优化。</p>
+<h2 id="尾递归"><a href="#尾递归" class="headerlink" title="尾递归"></a>尾递归</h2><p>在尾调用的情况下调用自身的特殊尾调用称为尾递归。</p>
+<h3 id="优化尾递归的分析"><a href="#优化尾递归的分析" class="headerlink" title="优化尾递归的分析"></a>优化尾递归的分析</h3><p>由于函数自身调用次数很多，递归层级很深，尾递归优化则使原本 <code>O(n)</code> 的调用栈空间只需要 <code>O(1)</code>。</p>
+<p>“尾调用优化” 对递归操作意义重大，ES6 中明确规定，所有 ECMAScript 的实现，都必须部署”尾调用优化”。</p>
+<p>所以在 ES6 中，只要使用尾递归，就不会发生栈溢出，相对节省内存。</p>
+<p>现有recsum函数如下：</p>
+<pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">recsum</span> (<span class="hljs-params">num</span>) </span>&#123;
+    <span class="hljs-keyword">if</span> (num === <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> num + recsum(num - <span class="hljs-number">1</span>)
+&#125;</code></pre>
+
+<p>调用recsum(5)为例:</p>
+<pre><code class="hljs plaintext">recsum(5)
+5 + recsum(4)
+5 + (4 + recsum(3))
+5 + (4 + (3 + recsum(2)))
+5 + (4 + (3 + (2 + recsum(1))))
+5 + (4 + (3 + (2 + 1)))
+5 + (4 + (3 + 3))
+5 + (4 + 6)
+5 + 10
+15</code></pre>
+
+<p>堆栈从左到右，增加到一个峰值后再计算从右到左缩小。</p>
+<p>修改以上代码，可以成为尾递归：</p>
+<pre><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">tailrecsum</span> (<span class="hljs-params">num, running_total=<span class="hljs-number">0</span></span>) </span>&#123;
+    <span class="hljs-keyword">if</span> (num === <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> running_total
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> tailrecsum(num - <span class="hljs-number">1</span>, running_total + num)
+&#125;</code></pre>
+
+<p>后者尾递归对内存的消耗</p>
+<pre><code class="hljs plaintext">tailrecsum(5, 0) 
+tailrecsum(4, 5) 
+tailrecsum(3, 9)
+tailrecsum(2, 12) 
+tailrecsum(1, 14) 
+tailrecsum(0, 15) 
+15</code></pre>
+
+<h3 id="递归函数的修改"><a href="#递归函数的修改" class="headerlink" title="递归函数的修改"></a>递归函数的修改</h3><p>由于要实现尾调用优化，函数的调用栈不在增加所以无法保持函数的局部变量，需要将局部变量以参数的形式传入，如上面的例子，来实现尾调用的优化。</p>
+<p>递归本质上是一种循环操作。纯粹的函数式编程语言没有循环操作命令，所有的循环都用递归实现，这就是为什么尾递归对这些语言极其重要。</p>
+<p>对于其他支持”尾调用优化”的语言（比如Lua，ES6），只需要知道循环可以用递归代替，而一旦使用递归，就最好使用尾递归。</p>
+
+  </main>
+</sectione>
+
+    
+<script src="/lib/bootstrap-5.1.3/js/bootstrap.bundle.min.js"></script>
+
+
+  </body>
+</html>

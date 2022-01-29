@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  
+<link rel="stylesheet" href="/lib/bootstrap-5.1.3/css/bootstrap.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+  
+  
+    
+<link rel="stylesheet" href="/css/github.css">
+
+    
+  
+
+  <title>预加载属性 preload 与 prefetch 区别 - 风灯零乱</title>
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+  <body class="container col-lg-8 col-md-10 justify-content-center">
+    <header>
+  <nav class="navbar sticky-top navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">风灯零乱</a>
+
+      <ul class="nav text-uppercase">
+         
+        <li class="nav-item">
+          <a class="nav-link" href="/archives"
+            >archives</a
+          >
+        </li>
+         
+        <li class="nav-item">
+          <a class="nav-link" href="/categories"
+            >categories</a
+          >
+        </li>
+         
+        <li class="nav-item">
+          <a class="nav-link" href="/tags"
+            >tags</a
+          >
+        </li>
+        
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+    <section class="container-fluid">
+  <div class="pb-3 pt-2">
+    <h1>
+      预加载属性 preload 与 prefetch 区别
+    </h1>
+    <time class="link-secondary fw-light">2020-03-04</time>
+  </div>
+
+  <main class="markdown-body">
+    <p>TLDR:</p>
+<ul>
+<li>preload 告诉浏览器立即加载资源;</li>
+<li>prefetch 告诉浏览器在空闲时才开始加载资源；</li>
+<li>preload、prefetch 仅仅是加载资源，并不会“执行”;</li>
+<li>preload、prefetch 均能设置、命中缓存；</li>
+<li>正确使用 preload、prefetch 不会导致重复请求；</li>
+</ul>
+<h2 id="测试-Demo"><a href="#测试-Demo" class="headerlink" title="测试 Demo"></a>测试 Demo</h2><p><a target="_blank" rel="noopener" href="https://github.com/waynegongcn/preload-prefetch">waynegongcn/preload-prefetch</a></p>
+<h2 id="优先级"><a href="#优先级" class="headerlink" title="优先级"></a>优先级</h2><p>修改 <code>index.html</code> 为如下内容：</p>
+<pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;preload&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/style.css?t=2000&quot;</span> <span class="hljs-attr">as</span>=<span class="hljs-string">&quot;style&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;preload&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/main.js?t=2000&quot;</span> <span class="hljs-attr">as</span>=<span class="hljs-string">&quot;script&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;prefetch&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/prefetch.css?t=1000&quot;</span> <span class="hljs-attr">as</span>=<span class="hljs-string">&quot;style&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;prefetch&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/prefetch.js?t=1000&quot;</span> <span class="hljs-attr">as</span>=<span class="hljs-string">&quot;script&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>hello world<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;preload&quot;</span>&gt;</span>preload<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;prefetch&quot;</span>&gt;</span>prefetch<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+
+<p><code>node index.js</code> 运行项目，打开调试工具查看 <code>localhost:3000</code>，从 performance 工具得到如下结果：</p>
+<p><img src="/images/2020/11/Snipaste_2020-11-04_16-42-48.png"></p>
+<p>发现 JS 没有输出，CSS 也没有生效。通过 <code>preload</code>、<code>prefetch</code> 加载的资源并不会立即“执行”；</p>
+<p>资源加载完成之前就已经完成了渲染，所以通过这两种方式资源的加载都不会阻塞关键渲染路径；</p>
+<p>使用 <code>preload</code> 会将资源优先级设置为 <code>Highest</code>，而使用 <code>prefetch</code> 会将资源优先级设置为 <code>Lowest</code>，<code>Lowest</code> 资源将会在网络空闲时才开始加载。</p>
+<p><code>preload</code> 优先级高于 <code>prefetch</code>；</p>
+<h2 id="终止请求与缓存"><a href="#终止请求与缓存" class="headerlink" title="终止请求与缓存"></a>终止请求与缓存</h2><p>修改 <code>index.html</code> 为如下内容：</p>
+<pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;preload&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/preload.js?t=3000&amp;ma=3600&quot;</span> <span class="hljs-attr">as</span>=<span class="hljs-string">&quot;script&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;prefetch&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/prefetch.js?t=3000&amp;ma=3600&quot;</span> <span class="hljs-attr">as</span>=<span class="hljs-string">&quot;script&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>hello world<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript"></span>
+<span class="javascript">    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> &#123;</span>
+<span class="javascript">      <span class="hljs-keyword">if</span> (location.href.indexOf(<span class="hljs-string">&#x27;r&#x27;</span>) === -<span class="hljs-number">1</span>) &#123;</span>
+<span class="javascript">        location.href = <span class="hljs-string">`http://localhost:3000?r=<span class="hljs-subst">$&#123;<span class="hljs-built_in">Date</span>.now()&#125;</span>`</span></span>
+<span class="javascript">      &#125;</span>
+<span class="javascript">    &#125;, <span class="hljs-number">1000</span>)</span>
+<span class="javascript">  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+<p>得到如下测试结果：</p>
+<p><img src="/images/2020/11/Snipaste_2020-11-04_17-17-13.png"></p>
+<p>可以发现，在使用 <code>preload</code>、<code>prefetch</code> 加载资源时，如果发生了页面跳转，此时没有完成的请求将会被取消掉；</p>
+<p>修改 <code>setTimeout</code> 参数为 <code>4000</code>，再次查看效果：</p>
+<p><img src="/images/2020/11/Snipaste_2020-11-04_17-22-58.png"></p>
+<p>在资源有设置缓存的情况下，通过 preload 与 prefetch 加载资源缓存均能生效；</p>
+<h2 id="重复请求"><a href="#重复请求" class="headerlink" title="重复请求"></a>重复请求</h2><p>为了验证使用预加载属性时是否会导致重复的网络请求，修改 <code>index.html</code> 如下：</p>
+<pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;preload&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/main.js?t=3000&quot;</span> <span class="hljs-attr">as</span>=<span class="hljs-string">&quot;script&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;prefetch&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;/main.js?t=3000&quot;</span> <span class="hljs-attr">as</span>=<span class="hljs-string">&quot;script&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>hello world<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;/main.js?t=3000&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+<p>当页面中实际用到的资源与 <code>preload</code>、<code>prefetch</code> 加载的资源重复时，浏览器不会进行重复请求（这个例子中不会出现第三个 <code>main.js</code> 的请求）；</p>
+<p>但是相同的资源重复使用 <code>preload</code>、<code>prefetch</code> 属性时将会导致重复下载（<code>main.js</code> 请求了两次，第二次耗时 6s 的请求为 <code>prefetch</code> 发起的）；</p>
+
+  </main>
+</sectione>
+
+    
+<script src="/lib/bootstrap-5.1.3/js/bootstrap.bundle.min.js"></script>
+
+
+  </body>
+</html>
