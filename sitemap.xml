@@ -11,24 +11,6 @@
   </url>
   
   <url>
-    <loc>https://waynegong.cn/posts/40528.html</loc>
-    
-    <lastmod>2022-01-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://waynegong.cn/categories/</loc>
-    
-    <lastmod>2022-01-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://waynegong.cn/posts/8279.html</loc>
     
     <lastmod>2022-01-30</lastmod>
@@ -174,6 +156,24 @@
   
   <url>
     <loc>https://waynegong.cn/posts/58085.html</loc>
+    
+    <lastmod>2022-01-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://waynegong.cn/posts/40528.html</loc>
+    
+    <lastmod>2022-01-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://waynegong.cn/categories/</loc>
     
     <lastmod>2022-01-30</lastmod>
     
