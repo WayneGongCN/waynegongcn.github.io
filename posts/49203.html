@@ -1,15 +1,57 @@
 <!doctype html>
 <html lang="en">
   <head>
-  <!-- Required meta tags -->
+  <!-- Meta -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+
+
+  
+    
+    
+<link rel="stylesheet" href="/css/github.css">
+
+  
+
+  <meta name="title" content="JS CSS 如何阻塞页面渲染 | 风灯零乱 少年羁旅 ｜ 独立开发 学习总结">
+  <meta name="keywords" content="web,独立开发,学习总结">
+  <meta name="description" content="独立开发 学习总结">
+
+  <!-- OpenGraph -->
+  <meta name="description" content="TLDR: CSS 和 JS 都会阻塞页面的 关键渲染路径 ，不同情况下阻塞效果不同：  内联 JS 的执行会阻塞 DOM 构建（Layout）； 外部 JS 的加载和执行都会阻塞 DOM 构建； 内联 CSS 的 CSSOM 构建会阻塞渲染树的构建，从而阻塞布局（Layout）； 外部 CSS 的加载和 CSSOM 构建都会阻塞渲染树的构建，从而阻塞布局； 在页面存在 CSS 和 JS 的情况下">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS CSS 如何阻塞页面渲染">
+<meta property="og:url" content="https://waynegong.cn/posts/49203.html">
+<meta property="og:site_name" content="风灯零乱">
+<meta property="og:description" content="TLDR: CSS 和 JS 都会阻塞页面的 关键渲染路径 ，不同情况下阻塞效果不同：  内联 JS 的执行会阻塞 DOM 构建（Layout）； 外部 JS 的加载和执行都会阻塞 DOM 构建； 内联 CSS 的 CSSOM 构建会阻塞渲染树的构建，从而阻塞布局（Layout）； 外部 CSS 的加载和 CSSOM 构建都会阻塞渲染树的构建，从而阻塞布局； 在页面存在 CSS 和 JS 的情况下">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://waynegong.cn/images/2020/11/Snipaste_2020-11-03_13-52-15.png">
+<meta property="og:image" content="https://waynegong.cn/images/2020/11/Snipaste_2020-11-03_13-58-45.png">
+<meta property="og:image" content="https://waynegong.cn/images/2020/11/Snipaste_2020-11-03_16-59-52.png">
+<meta property="og:image" content="https://waynegong.cn/images/2020/11/Snipaste_2020-11-03_17-33-12.png">
+<meta property="og:image" content="https://waynegong.cn/images/2020/11/Snipaste_2020-11-03_17-39-17.png">
+<meta property="og:image" content="https://waynegong.cn/images/2020/11/Snipaste_2020-11-03_19-01-54.png">
+<meta property="og:image" content="https://waynegong.cn/images/2020/11/Snipaste_2020-11-03_19-56-04.png">
+<meta property="article:published_time" content="2020-10-25T00:00:00.000Z">
+<meta property="article:modified_time" content="2022-01-30T05:51:09.687Z">
+<meta property="article:author" content="waynegong">
+<meta property="article:tag" content="web">
+<meta property="article:tag" content="独立开发">
+<meta property="article:tag" content="学习总结">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://waynegong.cn/images/2020/11/Snipaste_2020-11-03_13-52-15.png">
+
+  <!-- Title -->
+  <title>JS CSS 如何阻塞页面渲染 | 风灯零乱 少年羁旅 ｜ 独立开发 学习总结</title>
 
   <!-- 收录验证 -->
   <meta name="sogou_site_verification" content="Ya613VDsLE" />
   <meta name="360-site-verification" content="cede68bb0b1448f4d5dcc6cdbdb1239d" />
 
-
+  <!-- GTM -->
   
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -18,7 +60,6 @@
   })(window,document,'script','dataLayer','GTM-K9CJL9P');</script>
   
 
-
   <!-- Bootstrap CSS -->
   
 <link rel="stylesheet" href="/lib/bootstrap-5.1.3/css/bootstrap.min.css">
@@ -26,17 +67,6 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
-
-
-  
-  
-    
-<link rel="stylesheet" href="/css/github.css">
-
-    
-  
-
-  <title>JS CSS 如何阻塞页面渲染 - 风灯零乱</title>
 <meta name="generator" content="Hexo 6.0.0"></head>
 
   <body class="container col-lg-8 col-md-10 justify-content-center">

@@ -1,15 +1,49 @@
 <!doctype html>
 <html lang="en">
   <head>
-  <!-- Required meta tags -->
+  <!-- Meta -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+
+
+  
+    
+    
+<link rel="stylesheet" href="/css/github.css">
+
+  
+
+  <meta name="title" content="Docker 部署 Nginx、frp 实现内网穿透 | 风灯零乱 少年羁旅 ｜ 独立开发 学习总结">
+  <meta name="keywords" content="web,独立开发,学习总结">
+  <meta name="description" content="独立开发 学习总结">
+
+  <!-- OpenGraph -->
+  <meta name="description" content="由于没有公网 IP，加上黑群晖没有洗白，无法进行外网的远程连接。 通过 frp 内网穿透后可以通过 sub.domain.com:xxx 的形式访问到内网的 web 服务，但是带上端口号十分不优雅也难以记忆。 在公网服务器上部署 Nginx 反向代理到 frp 的特定端口，即可在使用内网服务时不需要端口号了。 服务端部署通过 docker-compose 启动 Dcoker 容器，保持 Nginx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker 部署 Nginx、frp 实现内网穿透">
+<meta property="og:url" content="https://waynegong.cn/posts/8279.html">
+<meta property="og:site_name" content="风灯零乱">
+<meta property="og:description" content="由于没有公网 IP，加上黑群晖没有洗白，无法进行外网的远程连接。 通过 frp 内网穿透后可以通过 sub.domain.com:xxx 的形式访问到内网的 web 服务，但是带上端口号十分不优雅也难以记忆。 在公网服务器上部署 Nginx 反向代理到 frp 的特定端口，即可在使用内网服务时不需要端口号了。 服务端部署通过 docker-compose 启动 Dcoker 容器，保持 Nginx">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-23T00:00:00.000Z">
+<meta property="article:modified_time" content="2022-01-30T05:51:09.687Z">
+<meta property="article:author" content="waynegong">
+<meta property="article:tag" content="web">
+<meta property="article:tag" content="独立开发">
+<meta property="article:tag" content="学习总结">
+<meta name="twitter:card" content="summary">
+
+  <!-- Title -->
+  <title>Docker 部署 Nginx、frp 实现内网穿透 | 风灯零乱 少年羁旅 ｜ 独立开发 学习总结</title>
 
   <!-- 收录验证 -->
   <meta name="sogou_site_verification" content="Ya613VDsLE" />
   <meta name="360-site-verification" content="cede68bb0b1448f4d5dcc6cdbdb1239d" />
 
-
+  <!-- GTM -->
   
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -18,7 +52,6 @@
   })(window,document,'script','dataLayer','GTM-K9CJL9P');</script>
   
 
-
   <!-- Bootstrap CSS -->
   
 <link rel="stylesheet" href="/lib/bootstrap-5.1.3/css/bootstrap.min.css">
@@ -26,17 +59,6 @@
   
 <link rel="stylesheet" href="/css/style.css">
 
-
-
-  
-  
-    
-<link rel="stylesheet" href="/css/github.css">
-
-    
-  
-
-  <title>Docker 部署 Nginx、frp 实现内网穿透 - 风灯零乱</title>
 <meta name="generator" content="Hexo 6.0.0"></head>
 
   <body class="container col-lg-8 col-md-10 justify-content-center">
