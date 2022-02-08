@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+  
+  
+
+
+  
+    
+    
+<link rel="stylesheet" href="/css/github.css">
+
+  
+
+  <meta name="title" content="Javascript 中 for...in 与 for...of 的区别 | 风灯零乱 | 独立开发 技术沉淀 思考总结">
+  <meta name="keywords" content="Web,独立开发,技术沉淀,思考总结">
+
+  <!-- OpenGraph -->
+  <meta name="description" content="TLDR：  for…in 以任意顺序迭代对象的可枚举属性（包括原型链上的属性）；  for…of 遍历迭代对象定义要迭代的数据；   Object 类型const obj &#x3D; &amp;#123;   name: &amp;#x27;wayne&amp;#x27; &amp;#125; obj.age &#x3D; 12 Object.defineProperty(obj, &amp;#x27;sex&amp;#x27;, &amp;#123; value:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript 中 for...in 与 for...of 的区别">
+<meta property="og:url" content="https://waynegong.cn/posts/44115.html">
+<meta property="og:site_name" content="风灯零乱">
+<meta property="og:description" content="TLDR：  for…in 以任意顺序迭代对象的可枚举属性（包括原型链上的属性）；  for…of 遍历迭代对象定义要迭代的数据；   Object 类型const obj &#x3D; &amp;#123;   name: &amp;#x27;wayne&amp;#x27; &amp;#125; obj.age &#x3D; 12 Object.defineProperty(obj, &amp;#x27;sex&amp;#x27;, &amp;#123; value:">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-02-26T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-02-08T03:13:22.303Z">
+<meta property="article:author" content="waynegong">
+<meta property="article:tag" content="Javascript">
+<meta name="twitter:card" content="summary">
+
+  <!-- Title -->
+  <title>Javascript 中 for...in 与 for...of 的区别 | 风灯零乱 | 独立开发 技术沉淀 思考总结</title>
+
+  <!-- 收录验证 -->
+  <meta name="sogou_site_verification" content="Ya613VDsLE" />
+  <meta name="360-site-verification" content="cede68bb0b1448f4d5dcc6cdbdb1239d" />
+  <meta name="baidu-site-verification" content="code-CXJVSO2lgq" />
+
+  <!-- GTM -->
+  
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-K9CJL9P');</script>
+  
+
+  <!-- Bootstrap CSS -->
+  
+<link rel="stylesheet" href="/lib/bootstrap-5.1.3/css/bootstrap.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+  <body class="container col-lg-8 col-md-10 justify-content-center">
+    <header>
+  <nav class="navbar sticky-top navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">风灯零乱</a>
+
+      <ul class="nav text-uppercase">
+         
+        <li class="nav-item">
+          <a class="nav-link" href="/archives/"
+            >archives</a
+          >
+        </li>
+         
+        <li class="nav-item">
+          <a class="nav-link" href="/categories/"
+            >categories</a
+          >
+        </li>
+         
+        <li class="nav-item">
+          <a class="nav-link" href="/tags/"
+            >tags</a
+          >
+        </li>
+        
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+    <section class="container-fluid">
+  <div class="pb-3 pt-2">
+    <h1>
+      Javascript 中 for...in 与 for...of 的区别
+    </h1>
+    <time class="link-secondary fw-light">2021-02-27</time>
+  </div>
+
+  <main class="markdown-body">
+    <p>TLDR：</p>
+<ul>
+<li><p><code>for…in</code> 以任意顺序迭代对象的可枚举属性（包括原型链上的属性）；</p>
+</li>
+<li><p><code>for…of</code> 遍历迭代对象定义要迭代的数据；</p>
+</li>
+</ul>
+<h2 id="Object-类型"><a href="#Object-类型" class="headerlink" title="Object 类型"></a>Object 类型</h2><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> obj = &#123;
+  <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;wayne&#x27;</span>
+&#125;
+obj.age = <span class="hljs-number">12</span>
+<span class="hljs-built_in">Object</span>.defineProperty(obj, <span class="hljs-string">&#x27;sex&#x27;</span>, &#123; <span class="hljs-attr">value</span>: <span class="hljs-string">&#x27;male&#x27;</span> &#125;)
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> item <span class="hljs-keyword">in</span> obj) &#123;
+  <span class="hljs-built_in">console</span>.log(item)   <span class="hljs-comment">// &#x27;name&#x27;, &#x27;age&#x27;</span>
+&#125;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> item <span class="hljs-keyword">of</span> obj) &#123;   <span class="hljs-comment">// TypeError: obj is not iterable</span>
+  <span class="hljs-built_in">console</span>.log(item)
+&#125;</code></pre>
+
+<h3 id="for…in-Object"><a href="#for…in-Object" class="headerlink" title="for…in Object"></a>for…in Object</h3><p><code>for…in</code> 迭代对象的可枚举属性，所以输出：name、age；</p>
+<p>没有输出 <code>sex</code> ，是因为通过 <code>Object.defineProperty()</code> 定义的属性，其属性描述符 <code>enumerable</code> 默认为 <code>false</code>；</p>
+<p>直接通过赋值和属性初始化的属性，属性描述符 <code>enumerable</code> 默认为 <code>true</code>；</p>
+<h3 id="for…of-Object"><a href="#for…of-Object" class="headerlink" title="for…of Object"></a>for…of Object</h3><p><code>for…of</code> 遍历迭代对象定义的数据；</p>
+<p>为了实现可迭代，一个对象必须实现 <code>@@iterator</code> 方法，即会有一个 <code>Symbol.iterator</code> 属性；</p>
+<p>由于 <code>obj</code> 没有实现可迭代协议，所以 <code>for…of</code> 一个 <code>Object</code> 会报错；</p>
+<pre><code class="hljs javascript"><span class="hljs-built_in">Symbol</span>.iterator <span class="hljs-keyword">in</span> &#123;&#125;
+<span class="hljs-comment">// false</span>
+
+<span class="hljs-built_in">Symbol</span>.iterator <span class="hljs-keyword">in</span> []
+<span class="hljs-comment">// true</span></code></pre>
+
+<h2 id="Array-类型"><a href="#Array-类型" class="headerlink" title="Array 类型"></a>Array 类型</h2><pre><code class="hljs javascript"><span class="hljs-built_in">Object</span>.prototype.objCustom = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;&#125;;
+<span class="hljs-built_in">Array</span>.prototype.arrCustom = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;&#125;;
+
+<span class="hljs-keyword">const</span> arr = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]
+arr.foo = <span class="hljs-string">&#x27;hello&#x27;</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> item <span class="hljs-keyword">in</span> arr) &#123;
+  <span class="hljs-built_in">console</span>.log(item)    <span class="hljs-comment">// &#x27;0&#x27;, &#x27;1&#x27;, &#x27;foo&#x27;, &#x27;arrCustom&#x27;, &#x27;objCustom&#x27;</span>
+&#125;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> item <span class="hljs-keyword">of</span> arr) &#123;
+  <span class="hljs-built_in">console</span>.log(item)    <span class="hljs-comment">// 1, 2</span>
+&#125;</code></pre>
+
+<h3 id="for…in-Array"><a href="#for…in-Array" class="headerlink" title="for…in Array"></a>for…in Array</h3><p><code>for…in</code> 遍历 <code>Array</code> 类型时依然遵循遍历所有可枚举属性原则；</p>
+<p>数组中每一个元素都是可枚举的，并且其可枚举属性就是下标（与 Javascript 数组的底层实现方式契合）；</p>
+<p>并且数组自身及原型链上的可枚举属性也都会被 <code>for…in</code> 列出，通常 <code>for…in</code> 会结合 <code>hasOwnProperty</code> 一起使用；</p>
+<p>但是即使使用 <code>hasOwnProperty</code> 也只能过滤继承而来的可枚举属性，而自身的可枚举属性依然会被 <code>for…in</code> 遍历；</p>
+<h3 id="for…of-Array"><a href="#for…of-Array" class="headerlink" title="for…of Array"></a>for…of Array</h3><p>在 <code>for…of</code> 中，由于 <code>Array</code> 类型是内置可迭代对象，所以会按照 <code>@@iterator</code> 定义的规则来进行迭代；</p>
+<p>所以 “<code>for…of</code> 用来迭代对象的 <code>value</code>” 这样描述并不准确，仅仅是因为在内置默认的迭代器中返回了对象的 <code>value</code>，对于迭代器的默认行为我们完全可以自定义其规则；</p>
+<h2 id="其他数据类型"><a href="#其他数据类型" class="headerlink" title="其他数据类型"></a>其他数据类型</h2><h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> str = <span class="hljs-string">&#x27;hello&#x27;</span>
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> item <span class="hljs-keyword">in</span> str) &#123;
+  <span class="hljs-built_in">console</span>.log(item)    <span class="hljs-comment">// &#x27;0&#x27;, &#x27;1&#x27;, &#x27;2&#x27;, &#x27;3&#x27;, &#x27;4&#x27;,</span>
+&#125;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> item <span class="hljs-keyword">of</span> str) &#123;
+  <span class="hljs-built_in">console</span>.log(item)    <span class="hljs-comment">// &#x27;h&#x27;,&#x27;e&#x27;,&#x27;l&#x27;,&#x27;l&#x27;,&#x27;o&#x27;,</span>
+&#125;</code></pre>
+
+<h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h3><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> set = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>([<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>])
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> item <span class="hljs-keyword">in</span> set) &#123;
+  <span class="hljs-built_in">console</span>.log(item)    <span class="hljs-comment">// 无输出</span>
+&#125;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> item <span class="hljs-keyword">of</span> set) &#123;
+  <span class="hljs-built_in">console</span>.log(item)    <span class="hljs-comment">// 1, 2, 3, 4, 5</span>
+&#125;</code></pre>
+
+<h3 id="内置可迭代对象"><a href="#内置可迭代对象" class="headerlink" title="内置可迭代对象"></a>内置可迭代对象</h3><p>从数据类型的支持程度来看 <code>for…of</code> 要优于 <code>for…in</code>。</p>
+<p>以下的内置可迭代对象均可用于 <code>for…of</code>：</p>
+<ul>
+<li><code>String</code></li>
+<li><code>Array</code></li>
+<li><code>TypedArray</code>、<code>ArrayBuffer</code>、<code>NodeList</code> 等类数组类型</li>
+<li><code>Map</code> </li>
+<li><code>Set</code></li>
+<li><code>arguments</code> 对象</li>
+</ul>
+
+  </main>
+</sectione>
+
+    
+<script src="/lib/bootstrap-5.1.3/js/bootstrap.bundle.min.js"></script>
+
+
+  </body>
+</html>
