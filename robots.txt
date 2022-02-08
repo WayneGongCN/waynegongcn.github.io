@@ -1,7 +1,3 @@
 User-agent: *
 
-Disallow: /js/
-Disallow: /css/
-Disallow: /lib/
-
 Sitemap: https://waynegong.cn/sitemap.xml
