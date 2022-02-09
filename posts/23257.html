@@ -29,9 +29,9 @@
 <meta property="og:site_name" content="风灯零乱">
 <meta property="og:description" content="Service Worker 是一种 JavaScript Worker，通常用来充当 Web 应用程序、浏览器与网络（可用时）之间的代理服务器。 它能够劫持从 Web 应用程序发起的请求，并进行灵活的缓存控制，使得在离线环境下也能访问指定的缓存资源，从而提供良好的离线体验。 除了进行细粒度的缓存控制，还可以实现推送通知、后台同步等功能。 前提条件HTTPS 环境由于 Service Worker">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://waynegong.cn/images/10/image-1.png">
+<meta property="og:image" content="https://waynegong.cn/images/2020/10/image-1.png">
 <meta property="article:published_time" content="2020-10-20T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-02-09T11:05:25.065Z">
+<meta property="article:modified_time" content="2022-02-09T12:12:00.239Z">
 <meta property="article:author" content="waynegong">
 <meta property="article:tag" content="博客">
 <meta property="article:tag" content="独立开发">
@@ -39,7 +39,7 @@
 <meta property="article:tag" content="思考总结">
 <meta property="article:tag" content="Web 前端">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://waynegong.cn/images/10/image-1.png">
+<meta name="twitter:image" content="https://waynegong.cn/images/2020/10/image-1.png">
 
   <!-- Title -->
   <title>理解 Service Worker | 风灯零乱 | 一个程序员的个人博客</title>
@@ -127,7 +127,7 @@
 <p>Service Worker 的更新流程与安装流程稍有差异。</p>
 <p>首次安装 Service Worker 时 install 事件执行完成后，会立即触发 active 事件，但当前客户端（页面）处于非受控状态，只有在刷新或新打开的页面中才能取得对新客户端的控制。</p>
 <p>更新的 Service Worker 也会立即执行 install 事件，但不会立即触发 active 事件，而是会进入activating 状态等待。直到没有任何页面使用旧的 Service Worker 时，这时才触发 active 事件，并取得后面打开页面的控制权。</p>
-<h2 id="Service-Worker-生命周期图"><a href="#Service-Worker-生命周期图" class="headerlink" title="Service Worker 生命周期图"></a>Service Worker 生命周期图</h2><p><img src="/images/10/image-1.png"></p>
+<h2 id="Service-Worker-生命周期图"><a href="#Service-Worker-生命周期图" class="headerlink" title="Service Worker 生命周期图"></a>Service Worker 生命周期图</h2><p><img src="/images/2020/10/image-1.png"></p>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
 <li>页面强制刷新时，页面获取直接依赖的资源时不会通过 Service Worker；</li>
 <li>多个 scop 下安装 service worker 情况</li>
