@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <!-- Meta -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- SEO Meta -->
+  
+  
+  
+  
+
+  
+    
+    
+<link rel="stylesheet" href="/css/github.css">
+
+  
+
+  <meta name="title" content="使用正则表达式将 markdown 链接转换为 a 链接 | 风灯零乱 | 一个程序员的个人博客">
+  <meta name="keywords" content="markdown 超链接,a 标签,正则表达式,html,分组匹配,向后否定断言,博客,独立开发,技术沉淀,思考总结,Web 前端">
+
+  <!-- Title -->
+  <title>使用正则表达式将 markdown 链接转换为 a 链接 | 风灯零乱 | 一个程序员的个人博客</title>
+
+  <!-- OpenGraph -->
+  <meta name="description" content="使用正则表达式，将 markdown 中的链接语法批量替换转换为 a 标签语法，以支持 target rel 等 a 标签属性。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用正则表达式将 markdown 链接转换为 a 链接">
+<meta property="og:url" content="https://waynegong.cn/posts/8598.html">
+<meta property="og:site_name" content="风灯零乱">
+<meta property="og:description" content="使用正则表达式，将 markdown 中的链接语法批量替换转换为 a 标签语法，以支持 target rel 等 a 标签属性。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-02-10T15:18:12.000Z">
+<meta property="article:modified_time" content="2022-02-10T15:38:03.927Z">
+<meta property="article:author" content="Wayne Gong">
+<meta property="article:tag" content="博客">
+<meta property="article:tag" content="独立开发">
+<meta property="article:tag" content="技术沉淀">
+<meta property="article:tag" content="思考总结">
+<meta property="article:tag" content="Web 前端">
+<meta name="twitter:card" content="summary">
+
+  <!-- 收录验证 -->
+  <meta name="sogou_site_verification" content="Ya613VDsLE" />
+  <meta name="360-site-verification" content="cede68bb0b1448f4d5dcc6cdbdb1239d" />
+  <meta name="baidu-site-verification" content="code-CXJVSO2lgq" />
+
+  <!-- GTM -->
+  
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-K9CJL9P');</script>
+  
+
+  <!-- Bootstrap CSS -->
+  
+<link rel="stylesheet" href="/lib/bootstrap-5.1.3/css/bootstrap.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <meta name="generator" content="Hexo 6.0.0"></head>
+
+  <body class="container d-flex flex-column  col-lg-8 col-md-10">
+    <header class="container-fluid flex-grow-0 line-bottom mb-2 ">
+      <nav class="row align-items-center justify-content-between">
+  <a class="col navbar-brand text-dark" href="/">风灯零乱</a>
+
+  <ul class="col-auto row p-0 m-0">
+    
+      
+      <li class="col-auto list-style-none">
+        <a class="text-dark text-decoration-none" href="/archives/">
+          归档
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+    </header>
+
+    <section class="main flex-grow-1">
+      <section class="container-fluid">
+  <div class="pb-3 pt-2">
+    <h1>
+      使用正则表达式将 markdown 链接转换为 a 链接
+    </h1>
+    <time class="link-secondary fw-light">2022-02-10</time>
+  </div>
+
+  <main class="markdown-body">
+    <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在使用 markdown 的超链接语法 <code>[text](link)</code> 时，无法支持 <code>&lt;a&gt;&lt;/a&gt;</code> 标签的其他属性（例如 <code>target</code>、<code>rel</code>）</p>
+<p>所以希望将现有用 markdown 链接语法的内容批量替换成 <code>&lt;a&gt;&lt;/a&gt;</code> 标签</p>
+<h2 id="正则解析"><a href="#正则解析" class="headerlink" title="正则解析"></a>正则解析</h2><p>通过正则表达式 <code>(?&lt;!!)\[(.*?)\]\((.*?)\)</code> 即可完成匹配，其中 <code>$1</code> 分组为链接文字， <code>$2</code> 分组为链接地址。</p>
+<p>整个正则表达式分为三部分：</p>
+<ol>
+<li>第一部分 <code>(?&lt;!!)</code> 向后否定断言，表示不匹配以 <code>!</code> 开始的内容，避免误伤到 markdown 的图片语法 <code>![text](img src)</code>;</li>
+<li>第一部分 <code>\[(.*?)\]</code> 匹配 markdown 链接语法的前半部分 <code>[text]</code>，并将结果保存到 <code>$1</code> 分组；</li>
+<li>第一部分 <code>\((.*?)\)</code> 匹配 markdown 链接语法的前半部分 <code>(link)</code>，并将结果保存到 <code>$2</code> 分组；</li>
+</ol>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> str = <span class="hljs-string">`balabala![img](https://path.to.img) balabala [text](http://path.to.link) balabala`</span>;
+<span class="hljs-keyword">const</span> reg = <span class="hljs-regexp">/(?&lt;!!)\[(.*?)\]\((.*?)\)/ig</span>;
+<span class="hljs-keyword">const</span> result = str.replace(reg, <span class="hljs-string">`&lt;a href=&quot;$2&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener nofollow&quot;&gt;$1&lt;/a&gt;`</span>);
+<span class="hljs-built_in">console</span>.log(result);</code></pre>
+  </main>
+</sectione>
+    </section>
+
+    <footer class="container-fluid flex-grow-0 line-top mt-2 mb-2 p-1">
+      <ul class="row align-items-center m-0 p-0 em-5 lh-sm text-muted " >
+  
+  <li class="list-style-none p-0">© 2022 <a href="mailto:wayne.gong.cn@hotmail.com" class="text-reset">Wayne Gong</a> All Rights Reserved</li>
+
+  <li class="list-style-none p-0">Powered by <a href="https://hexo.io/" class="text-reset" target="_blank" rel="noopener">Hexo</a></li>
+  <li class="list-style-none p-0">Theme by <a href="https://github.com/WayneGongCN/hexo-theme-atheme" class="text-reset" target="_blank" rel="noopener">atheme</a></li>
+
+  
+    
+    <li class="list-style-none p-0"><a href="https://github.com/waynegongcn/waynegongcn.github.io/edit/master/source/_posts/将markdown链接转换为a链接.md" class="text-reset" target="_blank" rel="noopener">Edit Page</a></li>
+  
+</ul>
+
+
+    </footer>
+
+    
+<script src="/lib/bootstrap-5.1.3/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+</html>
