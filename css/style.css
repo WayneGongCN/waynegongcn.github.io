@@ -1,9 +1,21 @@
-.dash-line {
-  flex: 1;
-  border-bottom: 1px dashed;
+html,
+body {
+  height: 100%;
 }
-.none-list-style {
+.dash-line {
+  border-bottom: 1px dashed #6c757d;
+}
+.line-bottom {
+  border-bottom: 1px solid;
+}
+.line-top {
+  border-top: 1px solid;
+}
+.list-style-none {
   list-style: none;
+}
+.em-5 {
+  font-size: 0.5em;
 }
 .markdown-body li {
   margin: 0.3em 0;
