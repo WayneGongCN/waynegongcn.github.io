@@ -33,7 +33,7 @@
 <meta property="og:description" content="家里电信 200M 光纤宽带没有 IPv4 外网地址，尝试获取 IPv6 地址成功后，内网设备能外网直连了～ 配置 IPv6超级管理员密码 nE7jA%5m 登陆光猫，网络 – 网络设置 – IP模式 选择 IPv4%IPv6。 路由器启用 IPv6，连接类型 Native DHCPv6、Stateless:RA，DNS 自动获取，内网 Ipv6 地址通过 DHCPv6 获取。 重新拨号，此时路由">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-06-10T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-02-10T05:27:30.741Z">
+<meta property="article:modified_time" content="2022-02-10T15:17:22.028Z">
 <meta property="article:author" content="Wayne Gong">
 <meta property="article:tag" content="博客">
 <meta property="article:tag" content="独立开发">
@@ -98,11 +98,11 @@
 <h2 id="配置-IPv6"><a href="#配置-IPv6" class="headerlink" title="配置 IPv6"></a>配置 IPv6</h2><p>超级管理员密码 <code>nE7jA%5m</code> 登陆光猫，网络 – 网络设置 – IP模式 选择 <code>IPv4%IPv6</code>。</p>
 <p>路由器启用 IPv6，连接类型 <code>Native DHCPv6、Stateless:RA</code>，DNS 自动获取，内网 Ipv6 地址通过 <code>DHCPv6</code> 获取。</p>
 <p>重新拨号，此时路由器与内网设备应该能正常获取到 IPv6 地址。</p>
-<p><a target="_blank" rel="noopener" href="https://ipv6-test.com/">IPv6 测试地址</a></p>
+<p><a target="_blank" href="https://ipv6-test.com/" rel="nofollow noopener">IPv6 测试地址</a></p>
 <h2 id="Cloudflare-DDNS"><a href="#Cloudflare-DDNS" class="headerlink" title="Cloudflare DDNS"></a>Cloudflare DDNS</h2><p>IPv6 为动态获取，需要做动态域名解析，确保外网能通过域名连接家里的设备。</p>
-<p>可以通过 Cloudflare 提供的 <a target="_blank" rel="noopener" href="https://api.cloudflare.com/#dns-records-for-a-zone-update-dns-record">API</a> 进行更新。</p>
-<h3 id="DDNS"><a href="#DDNS" class="headerlink" title="DDNS"></a>DDNS</h3><p>对于 Padavan、OpenWrt 等比较开放的路由器固件，可以使用下面的 <a target="_blank" rel="noopener" href="https://gist.github.com/waynegongcn/6349d420789bb70aaebc7ce7eb1daccf">Shell 脚本</a>进行 DDNS:</p>
-<p><code>zoneId</code>、<code>dnsId</code> 分别通过 <a target="_blank" rel="noopener" href="https://api.cloudflare.com/#zone-list-zones">List Zones</a> 与 <a target="_blank" rel="noopener" href="https://api.cloudflare.com/#dns-records-for-a-zone-list-dns-records">List DNS Records</a> 两个接口获取。</p>
+<p>可以通过 Cloudflare 提供的 <a target="_blank" href="https://api.cloudflare.com/#dns-records-for-a-zone-update-dns-record" rel="nofollow noopener">API</a> 进行更新。</p>
+<h3 id="DDNS"><a href="#DDNS" class="headerlink" title="DDNS"></a>DDNS</h3><p>对于 Padavan、OpenWrt 等比较开放的路由器固件，可以使用下面的 <a target="_blank" href="https://gist.github.com/waynegongcn/6349d420789bb70aaebc7ce7eb1daccf" rel="nofollow noopener">Shell 脚本</a>进行 DDNS:</p>
+<p><code>zoneId</code>、<code>dnsId</code> 分别通过 <a target="_blank" href="https://api.cloudflare.com/#zone-list-zones" rel="nofollow noopener">List Zones</a> 与 <a target="_blank" href="https://api.cloudflare.com/#dns-records-for-a-zone-list-dns-records" rel="nofollow noopener">List DNS Records</a> 两个接口获取。</p>
 <pre><code class="hljs bash"><span class="hljs-meta">#!/bin/sh</span>
 EMAIL=
 CF_API_KEY=
