@@ -17,8 +17,14 @@ body {
 .list-style-none {
   list-style: none;
 }
-.em-5 {
-  font-size: 0.5em;
+.em-6 {
+  font-size: 0.6em;
+}
+.em-8 {
+  font-size: 0.8em;
+}
+.em-4 {
+  font-size: 0.4em;
 }
 .markdown-body li {
   margin: 0.3em 0;
