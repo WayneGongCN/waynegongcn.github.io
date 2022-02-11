@@ -33,7 +33,7 @@
 <meta property="og:description" content="当函数的调用层数非常多时，需要同时保存成千上百个调用记录，调用栈会消耗不少内存，甚容易导致栈溢出。 尾调用的调用栈则特别易于优化，从而可减少内存空间的使用，也能提高运行速度。 尾调用尾调用 (tail call) 指的是一个函数的最后一条语句是一个返回调用函数的语句。 &#x2F;&#x2F; 属于尾调用 function bar(data) &amp;#123;   if ( a(data) ) &amp;#123;     re">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-10-10T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-02-11T08:32:16.016Z">
+<meta property="article:modified_time" content="2022-02-11T09:06:09.062Z">
 <meta property="article:author" content="Wayne Gong">
 <meta property="article:tag" content="博客">
 <meta property="article:tag" content="独立开发">
@@ -94,8 +94,8 @@
   </div>
 
   <main class="markdown-body">
-    <p>当函数的调用层数非常多时，需要同时保存成千上百个调用记录，调用栈会消耗不少内存，甚容易导致<a target="_blank" href="https://zh.wikipedia.org/wiki/%E6%A0%88%E6%BA%A2%E5%87%BA" rel="nofollow noopener">栈溢出</a>。</p>
-<p>尾调用的<a target="_blank" href="https://zh.wikipedia.org/wiki/%E5%91%BC%E5%8F%AB%E5%A0%86%E7%96%8A" rel="nofollow noopener">调用栈</a>则特别易于优化，从而可减少内存空间的使用，也能提高运行速度。</p>
+    <p>当函数的调用层数非常多时，需要同时保存成千上百个调用记录，调用栈会消耗不少内存，甚容易导致<a href="https://zh.wikipedia.org/wiki/%E6%A0%88%E6%BA%A2%E5%87%BA" target="_blank" rel="noopener external nofollow noreferrer">栈溢出</a>。</p>
+<p>尾调用的<a href="https://zh.wikipedia.org/wiki/%E5%91%BC%E5%8F%AB%E5%A0%86%E7%96%8A" target="_blank" rel="noopener external nofollow noreferrer">调用栈</a>则特别易于优化，从而可减少内存空间的使用，也能提高运行速度。</p>
 <h2 id="尾调用"><a href="#尾调用" class="headerlink" title="尾调用"></a>尾调用</h2><p>尾调用 (tail call) 指的是<strong>一个函数的最后一条语句是一个返回调用函数的语句</strong>。</p>
 <pre><code class="hljs javascript"><span class="hljs-comment">// 属于尾调用</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">bar</span>(<span class="hljs-params">data</span>) </span>&#123;

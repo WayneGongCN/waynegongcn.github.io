@@ -33,7 +33,7 @@
 <meta property="og:description" content="ESP8266 是一款由上海乐鑫信息科技开发的可以作为微控制器使用的成本极低且具有完整 TCP&#x2F;IP 协议栈的 Wi-Fi IoT 控制芯片。  简单来说就是这块芯片能连 WiFi 、能编程控制 GPIO。 ESP8266 开发板但是单独对一块芯片进行开发调试会比较麻烦，需要连接串口、电源等等。 市面上有许多 ESP8266 的开发版，使用开发版只需要通过 USB 接口连接开发版，就可以方便的进">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-01-08T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-02-11T08:32:16.016Z">
+<meta property="article:modified_time" content="2022-02-11T09:06:09.062Z">
 <meta property="article:author" content="Wayne Gong">
 <meta property="article:tag" content="博客">
 <meta property="article:tag" content="独立开发">
@@ -105,12 +105,12 @@
 <h2 id="MicroPython"><a href="#MicroPython" class="headerlink" title="MicroPython"></a>MicroPython</h2><p>MicroPython，是Python 3编程语言的一个完整软件实现，用C语言编写，被优化于运行在微控制器之上。</p>
 <p>和 NodeMcu 一样，MicroPython 是跑在 ESP8266 上的一个“操作系统”，可以通过 python 语言对硬件进行开发。</p>
 <h3 id="Hello-MicroPython"><a href="#Hello-MicroPython" class="headerlink" title="Hello MicroPython"></a>Hello MicroPython</h3><p>由于 ESP8266 本身并没有安装 “MicroPython 操作系统”，首先得进行固件的烧录（安装操作系统）。</p>
-<p>详细的步骤参考 MicroPython 的 <a target="_blank" href="http://docs.micropython.org/en/latest/esp8266/quickref.html" rel="nofollow noopener">文档</a></p>
+<p>详细的步骤参考 MicroPython 的 <a href="http://docs.micropython.org/en/latest/esp8266/quickref.html" target="_blank" rel="noopener external nofollow noreferrer">文档</a></p>
 <p>简单总结一下步骤：</p>
 <ul>
 <li>安装串口驱动</li>
 <li>安装烧录工具 <code>pip install esptool</code></li>
-<li>下载 ESP8266 <a target="_blank" href="http://micropython.org/download#esp8266" rel="nofollow noopener">固件</a></li>
+<li>下载 ESP8266 <a href="http://micropython.org/download#esp8266" target="_blank" rel="noopener external nofollow noreferrer">固件</a></li>
 <li>抹掉自带固件 <code>esptool.py --port /dev/ttyUSB0 erase_flash</code> (/dev/ttyUSB0 为串口硬件)</li>
 <li>烧录固件 <code>esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect 0 固件目录</code></li>
 <li>通过串口进入 REPL 环境</li>
