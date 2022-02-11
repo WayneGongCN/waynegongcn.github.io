@@ -18,22 +18,22 @@
 
   
 
-  <meta name="title" content="浏览器扩展开发 | 风灯零乱 | 一个程序员的个人博客">
+  <meta name="title" content="浏览器扩展开发 - i18n 国际化配置 | 风灯零乱 | 一个程序员的个人博客">
   <meta name="keywords" content="博客,独立开发,技术沉淀,思考总结,Web 前端">
 
   <!-- Title -->
-  <title>浏览器扩展开发 | 风灯零乱 | 一个程序员的个人博客</title>
+  <title>浏览器扩展开发 - i18n 国际化配置 | 风灯零乱 | 一个程序员的个人博客</title>
 
   <!-- OpenGraph -->
-  <meta name="description" content="一个程序员的个人博客">
+  <meta name="description" content="Chrome 浏览器扩展进行 i18n 国际化多语言适配需要进行三处修改：  在特定目录按照特定格式编写多语言配置的 messages.json 文件； 在 manifest.json 中设置默认语言； 修改项目代码，通过 __MSG_messagename__ 或 getMessage 方法获取本地化内容；  编写多语言配置多语言文件位于扩展根目录的 _locales&#x2F;&amp;#123;_locale">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浏览器扩展开发">
+<meta property="og:title" content="浏览器扩展开发 - i18n 国际化配置">
 <meta property="og:url" content="https://waynegong.cn/posts/954.html">
 <meta property="og:site_name" content="风灯零乱">
-<meta property="og:description" content="一个程序员的个人博客">
+<meta property="og:description" content="Chrome 浏览器扩展进行 i18n 国际化多语言适配需要进行三处修改：  在特定目录按照特定格式编写多语言配置的 messages.json 文件； 在 manifest.json 中设置默认语言； 修改项目代码，通过 __MSG_messagename__ 或 getMessage 方法获取本地化内容；  编写多语言配置多语言文件位于扩展根目录的 _locales&#x2F;&amp;#123;_locale">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-02-11T08:23:58.000Z">
-<meta property="article:modified_time" content="2022-02-11T09:06:09.062Z">
+<meta property="article:published_time" content="2022-02-12T02:23:58.000Z">
+<meta property="article:modified_time" content="2022-02-11T09:52:00.844Z">
 <meta property="article:author" content="Wayne Gong">
 <meta property="article:tag" content="浏览器扩展">
 <meta property="article:tag" content="浏览器插件">
@@ -90,13 +90,46 @@
       <section class="container flex-grow-1">
   <div class="pb-3 pt-2">
     <h1>
-      浏览器扩展开发
+      浏览器扩展开发 - i18n 国际化配置
     </h1>
-    <time class="link-secondary fw-light">2022-02-11</time>
+    <time class="link-secondary fw-light">2022-02-12</time>
   </div>
 
   <main class="markdown-body">
-    
+    <p>Chrome 浏览器扩展进行 i18n 国际化多语言适配需要进行三处修改：</p>
+<ol>
+<li>在特定目录按照特定格式编写多语言配置的 <code>messages.json</code> 文件；</li>
+<li>在 <code>manifest.json</code> 中设置默认语言；</li>
+<li>修改项目代码，通过 <code>__MSG_messagename__</code> 或 <code>getMessage</code> 方法获取本地化内容；</li>
+</ol>
+<h2 id="编写多语言配置"><a href="#编写多语言配置" class="headerlink" title="编写多语言配置"></a>编写多语言配置</h2><p>多语言文件位于扩展根目录的 <code>_locales/&#123;_localeCode_&#125;/messages.json</code> 路径下</p>
+<p>支持的 <code>_localeCode_</code> 可参考 <a href="https://src.chromium.org/viewvc/chrome/trunk/src/third_party/cld/languages/internal/languages.cc" target="_blank" rel="noopener external nofollow noreferrer">languages.cc</a></p>
+<p>以英语 <code>en</code> 为例，<code>_localCode_/en/messages.json</code> 如下：</p>
+<pre><code class="hljs json">&#123;
+  <span class="hljs-attr">&quot;title&quot;</span>: &#123;
+    <span class="hljs-attr">&quot;message&quot;</span>: <span class="hljs-string">&quot;hello world&quot;</span>, <span class="hljs-comment">// title 字段的英语表示，必填</span>
+    <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;Title string&quot;</span>  <span class="hljs-comment">// 当前字段的描述信息（注释），可选</span>
+  &#125;,
+  ...
+&#125;</code></pre>
+
+<h2 id="配置默认语言"><a href="#配置默认语言" class="headerlink" title="配置默认语言"></a>配置默认语言</h2><p>多语言配置编写完成后，还必须在 <code>manifest.json</code> 中设置默认语言 <code>default_locale</code> 才能生效。</p>
+<h2 id="使用本地化内容"><a href="#使用本地化内容" class="headerlink" title="使用本地化内容"></a>使用本地化内容</h2><p>在 Javascript 中，可通过调用 <code>getMessage</code> 方法获取本地化之后的内容，具体参数参考 <a href="https://developer.chrome.com/docs/extensions/reference/i18n/#method-getMessage" target="_blank" rel="noopener external nofollow noreferrer">getMessage API</a></p>
+<p>在不支持 <code>getMessage</code> 方法的环境下（例如 json、css、html），可使用 <code>__MSG_messagename__</code> 占位符获取本地化内容。</p>
+<h2 id="多语言降级"><a href="#多语言降级" class="headerlink" title="多语言降级"></a>多语言降级</h2><p>当扩展程序在特定 <code>_localeCode_</code> 目录下没有找到本地化内容时，会按照一定<a href="https://developer.chrome.com/docs/extensions/reference/i18n/#searching-for-messages" target="_blank" rel="noopener external nofollow noreferrer">规则</a>进行搜索：</p>
+<ul>
+<li>未找到当前地区的语言时，降级到当前大的语言环境，例如未找到 <code>en_US</code> 时，会尝试搜索 <code>en</code> 目录；</li>
+<li>未满足上述条件时，则会使用 <code>default_locale</code> 配置的语言；</li>
+<li>否则返回 <code>&quot;&quot;</code> 空字符；</li>
+</ul>
+<h2 id="多语言调试"><a href="#多语言调试" class="headerlink" title="多语言调试"></a>多语言调试</h2><p>调试多语言配置时，需要修改到特定的语言环境，具体方法参考：</p>
+<ul>
+<li><a href="https://developer.chrome.com/docs/extensions/reference/i18n/#windows" target="_blank" rel="noopener external nofollow noreferrer">Windows</a></li>
+<li><a href="https://developer.chrome.com/docs/extensions/reference/i18n/#mac-os-x" target="_blank" rel="noopener external nofollow noreferrer">MacOS</a></li>
+<li><a href="https://developer.chrome.com/docs/extensions/reference/i18n/#linux" target="_blank" rel="noopener external nofollow noreferrer">Linux</a></li>
+</ul>
+<h2 id="其他方法"><a href="#其他方法" class="headerlink" title="其他方法"></a>其他方法</h2><p><a href="https://developer.chrome.com/docs/extensions/reference/i18n/#method" target="_blank" rel="noopener external nofollow noreferrer">API 文档</a></p>
+
   </main>
 </sectione>
     </section>

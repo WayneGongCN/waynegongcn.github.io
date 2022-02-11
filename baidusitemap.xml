@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://waynegong.cn/posts/23257.html</loc>
-    <lastmod>2022-02-11</lastmod>
-  </url>
-  <url>
-    <loc>https://waynegong.cn/posts/25672.html</loc>
-    <lastmod>2022-02-11</lastmod>
-  </url>
-  <url>
-    <loc>https://waynegong.cn/posts/58085.html</loc>
-    <lastmod>2022-02-11</lastmod>
-  </url>
-  <url>
-    <loc>https://waynegong.cn/posts/40528.html</loc>
-    <lastmod>2022-02-11</lastmod>
-  </url>
-  <url>
     <loc>https://waynegong.cn/posts/8279.html</loc>
     <lastmod>2022-02-11</lastmod>
   </url>
@@ -82,6 +66,22 @@
   </url>
   <url>
     <loc>https://waynegong.cn/posts/22531.html</loc>
+    <lastmod>2022-02-11</lastmod>
+  </url>
+  <url>
+    <loc>https://waynegong.cn/posts/23257.html</loc>
+    <lastmod>2022-02-11</lastmod>
+  </url>
+  <url>
+    <loc>https://waynegong.cn/posts/25672.html</loc>
+    <lastmod>2022-02-11</lastmod>
+  </url>
+  <url>
+    <loc>https://waynegong.cn/posts/58085.html</loc>
+    <lastmod>2022-02-11</lastmod>
+  </url>
+  <url>
+    <loc>https://waynegong.cn/posts/40528.html</loc>
     <lastmod>2022-02-11</lastmod>
   </url>
 </urlset> 
