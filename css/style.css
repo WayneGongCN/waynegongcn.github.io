@@ -2,6 +2,9 @@ html,
 body {
   height: 100%;
 }
+body {
+  font-family: serif;
+}
 .dash-line {
   border-bottom: 1px dashed #6c757d;
 }
