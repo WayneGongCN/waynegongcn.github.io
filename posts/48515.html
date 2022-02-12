@@ -18,11 +18,9 @@
 
   
 
+  <title>浏览器扩展开发 - Chrome store 自动发布 | 风灯零乱 | 一个程序员的个人博客</title>
   <meta name="title" content="浏览器扩展开发 - Chrome store 自动发布 | 风灯零乱 | 一个程序员的个人博客">
   <meta name="keywords" content="浏览器扩展,浏览器插件,自动发布,持续部署,持续集成,Chrome store,Chrome extension,博客,独立开发,技术沉淀,思考总结,Web 前端">
-
-  <!-- Title -->
-  <title>浏览器扩展开发 - Chrome store 自动发布 | 风灯零乱 | 一个程序员的个人博客</title>
 
   <!-- OpenGraph -->
   <meta name="description" content="背景目前 microsoft-todo-browser-ext 在代码提交到 master 分支后，会自动执行 GitHub Action 进行构建，但发布过程仍然需要人工进行手动发布。 为了解决这类重复性操作，减少可能出现的操作失误，将发布过程通过自动化完成。 方案当 master 分支触发 tag push 事件后，开始启动 Github Action 进行 CI 构建，构建完成后通过脚本将构">
@@ -33,15 +31,22 @@
 <meta property="og:description" content="背景目前 microsoft-todo-browser-ext 在代码提交到 master 分支后，会自动执行 GitHub Action 进行构建，但发布过程仍然需要人工进行手动发布。 为了解决这类重复性操作，减少可能出现的操作失误，将发布过程通过自动化完成。 方案当 master 分支触发 tag push 事件后，开始启动 Github Action 进行 CI 构建，构建完成后通过脚本将构">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-28T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-02-12T10:03:37.880Z">
+<meta property="article:modified_time" content="2022-02-12T10:18:59.195Z">
 <meta property="article:author" content="Wayne Gong">
 <meta property="article:tag" content="浏览器扩展开发">
 <meta name="twitter:card" content="summary">
 
   <!-- 收录验证 -->
-  <meta name="sogou_site_verification" content="Ya613VDsLE" />
-  <meta name="360-site-verification" content="cede68bb0b1448f4d5dcc6cdbdb1239d" />
-  <meta name="baidu-site-verification" content="code-CXJVSO2lgq" />
+  
+  
+    <meta name="sogou_site_verification" content="Ya613VDsLE" />
+  
+  
+    <meta name="360-site-verification" content="cede68bb0b1448f4d5dcc6cdbdb1239d" />
+  
+  
+    <meta name="baidu-site-verification" content="CXJVSO2lgq" />
+    
 
   <!-- GTM -->
   
@@ -52,10 +57,14 @@
   })(window,document,'script','dataLayer','GTM-K9CJL9P');</script>
   
 
-  <!-- Bootstrap CSS -->
+  <!-- favicon -->
   
-<link rel="stylesheet" href="/lib/bootstrap-5.1.3/css/bootstrap-reboot.min.css">
+    <link rel="icon"  href="/favicon/favicon.ico" />
+    <link rel="icon"  type="image/png" href="/favicon/favicon-16x16.png" />
+    <link rel="icon"  type="image/png" href="/favicon/favicon-32x32.png" />
+    
 
+  <!-- Bootstrap CSS -->
   
 <link rel="stylesheet" href="/lib/bootstrap-5.1.3/css/bootstrap.min.css">
 
@@ -153,20 +162,50 @@ store.publish(target).then(<span class="hljs-function"><span class="hljs-params"
   
   <li class="list-style-none p-0">© 2022 <a href="mailto:wayne.gong.cn@hotmail.com" class="text-reset">Wayne Gong</a> All Rights Reserved</li>
 
-  <li class="list-style-none p-0">Powered by <a href="https://hexo.io/" class="text-reset" target="_blank" rel="noopener">Hexo</a></li>
-  <li class="list-style-none p-0">Theme by <a href="https://github.com/WayneGongCN/hexo-theme-atheme" class="text-reset" target="_blank" rel="noopener">atheme</a></li>
+  <li class="list-style-none p-0">Powered by <a href="https://hexo.io/" class="text-reset" target="_blank" rel="noopener external nofollow noreferrer">Hexo</a></li>
+  <li class="list-style-none p-0">Theme by <a href="https://github.com/WayneGongCN/hexo-theme-atheme" class="text-reset" target="_blank" rel="noopener external nofollow noreferrer">atheme</a></li>
 
   
     
-    <li class="list-style-none p-0"><a href="https://github.com/waynegongcn/waynegongcn.github.io/edit/master/source/_posts/浏览器扩展开发 - Chrome store 自动发布.md" class="text-reset" target="_blank" rel="noopener">Edit Page</a></li>
+    <li class="list-style-none p-0"><a href="https://github.com/waynegongcn/waynegongcn.github.io/edit/master/source/_posts/浏览器扩展开发 - Chrome store 自动发布.md" class="text-reset" target="_blank" rel="noopener external nofollow noreferrer">Edit Page</a></li>
   
 </ul>
 
 
     </footer>
 
-    <!-- 
-<script src="/lib/bootstrap-5.1.3/js/bootstrap.bundle.min.js"></script>
- -->
+
+    
+      
+  
+  
+  <!-- baidu push -->
+  <script>
+    (function () {
+      var bp = document.createElement("script");
+      var curProtocol = window.location.protocol.split(":")[0];
+      if (curProtocol === "https") {
+        bp.src = "https://zz.bdstatic.com/linksubmit/push.js";
+      } else {
+        bp.src = "http://push.zhanzhang.baidu.com/push.js";
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+  
+
+  
+  <!-- 360 push -->
+  <script>
+    (function () {
+      var src = "https://s.ssl.qhres2.com/ssl/ab77b6ea7f3fbf79.js";
+      document.write('<script src="' + src + '" id="sozz"><\/script>');
+    })();
+  </script>
+  
+
+
+    
   </body>
 </html>

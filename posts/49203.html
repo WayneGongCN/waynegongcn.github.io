@@ -18,11 +18,9 @@
 
   
 
+  <title>JS CSS 如何阻塞页面渲染 | 风灯零乱 | 一个程序员的个人博客</title>
   <meta name="title" content="JS CSS 如何阻塞页面渲染 | 风灯零乱 | 一个程序员的个人博客">
   <meta name="keywords" content="博客,独立开发,技术沉淀,思考总结,Web 前端">
-
-  <!-- Title -->
-  <title>JS CSS 如何阻塞页面渲染 | 风灯零乱 | 一个程序员的个人博客</title>
 
   <!-- OpenGraph -->
   <meta name="description" content="TLDR: CSS 和 JS 都会阻塞页面的 关键渲染路径 ，不同情况下阻塞效果不同：  内联 JS 的执行会阻塞 DOM 构建（Layout）； 外部 JS 的加载和执行都会阻塞 DOM 构建； 内联 CSS 的 CSSOM 构建会阻塞渲染树的构建，从而阻塞布局（Layout）； 外部 CSS 的加载和 CSSOM 构建都会阻塞渲染树的构建，从而阻塞布局； 在页面存在 CSS 和 JS 的情况下">
@@ -40,7 +38,7 @@
 <meta property="og:image" content="https://waynegong.cn/images/2020/11/Snipaste_2020-11-03_19-01-54.png">
 <meta property="og:image" content="https://waynegong.cn/images/2020/11/Snipaste_2020-11-03_19-56-04.png">
 <meta property="article:published_time" content="2020-10-24T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-02-12T10:03:37.876Z">
+<meta property="article:modified_time" content="2022-02-12T10:18:59.195Z">
 <meta property="article:author" content="Wayne Gong">
 <meta property="article:tag" content="博客">
 <meta property="article:tag" content="独立开发">
@@ -51,9 +49,16 @@
 <meta name="twitter:image" content="https://waynegong.cn/images/2020/11/Snipaste_2020-11-03_13-52-15.png">
 
   <!-- 收录验证 -->
-  <meta name="sogou_site_verification" content="Ya613VDsLE" />
-  <meta name="360-site-verification" content="cede68bb0b1448f4d5dcc6cdbdb1239d" />
-  <meta name="baidu-site-verification" content="code-CXJVSO2lgq" />
+  
+  
+    <meta name="sogou_site_verification" content="Ya613VDsLE" />
+  
+  
+    <meta name="360-site-verification" content="cede68bb0b1448f4d5dcc6cdbdb1239d" />
+  
+  
+    <meta name="baidu-site-verification" content="CXJVSO2lgq" />
+    
 
   <!-- GTM -->
   
@@ -64,10 +69,14 @@
   })(window,document,'script','dataLayer','GTM-K9CJL9P');</script>
   
 
-  <!-- Bootstrap CSS -->
+  <!-- favicon -->
   
-<link rel="stylesheet" href="/lib/bootstrap-5.1.3/css/bootstrap-reboot.min.css">
+    <link rel="icon"  href="/favicon/favicon.ico" />
+    <link rel="icon"  type="image/png" href="/favicon/favicon-16x16.png" />
+    <link rel="icon"  type="image/png" href="/favicon/favicon-32x32.png" />
+    
 
+  <!-- Bootstrap CSS -->
   
 <link rel="stylesheet" href="/lib/bootstrap-5.1.3/css/bootstrap.min.css">
 
@@ -233,20 +242,50 @@
   
   <li class="list-style-none p-0">© 2022 <a href="mailto:wayne.gong.cn@hotmail.com" class="text-reset">Wayne Gong</a> All Rights Reserved</li>
 
-  <li class="list-style-none p-0">Powered by <a href="https://hexo.io/" class="text-reset" target="_blank" rel="noopener">Hexo</a></li>
-  <li class="list-style-none p-0">Theme by <a href="https://github.com/WayneGongCN/hexo-theme-atheme" class="text-reset" target="_blank" rel="noopener">atheme</a></li>
+  <li class="list-style-none p-0">Powered by <a href="https://hexo.io/" class="text-reset" target="_blank" rel="noopener external nofollow noreferrer">Hexo</a></li>
+  <li class="list-style-none p-0">Theme by <a href="https://github.com/WayneGongCN/hexo-theme-atheme" class="text-reset" target="_blank" rel="noopener external nofollow noreferrer">atheme</a></li>
 
   
     
-    <li class="list-style-none p-0"><a href="https://github.com/waynegongcn/waynegongcn.github.io/edit/master/source/_posts/JS CSS 如何阻塞页面渲染.md" class="text-reset" target="_blank" rel="noopener">Edit Page</a></li>
+    <li class="list-style-none p-0"><a href="https://github.com/waynegongcn/waynegongcn.github.io/edit/master/source/_posts/JS CSS 如何阻塞页面渲染.md" class="text-reset" target="_blank" rel="noopener external nofollow noreferrer">Edit Page</a></li>
   
 </ul>
 
 
     </footer>
 
-    <!-- 
-<script src="/lib/bootstrap-5.1.3/js/bootstrap.bundle.min.js"></script>
- -->
+
+    
+      
+  
+  
+  <!-- baidu push -->
+  <script>
+    (function () {
+      var bp = document.createElement("script");
+      var curProtocol = window.location.protocol.split(":")[0];
+      if (curProtocol === "https") {
+        bp.src = "https://zz.bdstatic.com/linksubmit/push.js";
+      } else {
+        bp.src = "http://push.zhanzhang.baidu.com/push.js";
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+  
+
+  
+  <!-- 360 push -->
+  <script>
+    (function () {
+      var src = "https://s.ssl.qhres2.com/ssl/ab77b6ea7f3fbf79.js";
+      document.write('<script src="' + src + '" id="sozz"><\/script>');
+    })();
+  </script>
+  
+
+
+    
   </body>
 </html>

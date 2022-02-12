@@ -18,11 +18,9 @@
 
   
 
+  <title>浏览器的关键渲染路径 | 风灯零乱 | 一个程序员的个人博客</title>
   <meta name="title" content="浏览器的关键渲染路径 | 风灯零乱 | 一个程序员的个人博客">
   <meta name="keywords" content="博客,独立开发,技术沉淀,思考总结,Web 前端">
-
-  <!-- Title -->
-  <title>浏览器的关键渲染路径 | 风灯零乱 | 一个程序员的个人博客</title>
 
   <!-- OpenGraph -->
   <meta name="description" content="TLDR，页面的关键渲染路径：  构建对象模型（Object Model） 构建 DOM（文档对象模型） 构建 CSSOM（CSS 对象模型） 构建渲染树（Render Tree） 布局（Layout） 绘制（Paint）  从浏览器接收到 HTML内容时便开始了这一系列的工作。理解浏览器渲染过程是优化 Web 性能的基础。 构建对象模型浏览器接收到 HTML、CSS 后便开始了对象模型的构建。">
@@ -36,7 +34,7 @@
 <meta property="og:image" content="https://waynegong.cn/images/2020/11/cssom-tree.png">
 <meta property="og:image" content="https://waynegong.cn/images/2020/11/render-tree-construction.png">
 <meta property="article:published_time" content="2020-11-01T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-02-12T10:03:37.880Z">
+<meta property="article:modified_time" content="2022-02-12T10:18:59.195Z">
 <meta property="article:author" content="Wayne Gong">
 <meta property="article:tag" content="博客">
 <meta property="article:tag" content="独立开发">
@@ -47,9 +45,16 @@
 <meta name="twitter:image" content="https://waynegong.cn/images/2020/11/full-process.png">
 
   <!-- 收录验证 -->
-  <meta name="sogou_site_verification" content="Ya613VDsLE" />
-  <meta name="360-site-verification" content="cede68bb0b1448f4d5dcc6cdbdb1239d" />
-  <meta name="baidu-site-verification" content="code-CXJVSO2lgq" />
+  
+  
+    <meta name="sogou_site_verification" content="Ya613VDsLE" />
+  
+  
+    <meta name="360-site-verification" content="cede68bb0b1448f4d5dcc6cdbdb1239d" />
+  
+  
+    <meta name="baidu-site-verification" content="CXJVSO2lgq" />
+    
 
   <!-- GTM -->
   
@@ -60,10 +65,14 @@
   })(window,document,'script','dataLayer','GTM-K9CJL9P');</script>
   
 
-  <!-- Bootstrap CSS -->
+  <!-- favicon -->
   
-<link rel="stylesheet" href="/lib/bootstrap-5.1.3/css/bootstrap-reboot.min.css">
+    <link rel="icon"  href="/favicon/favicon.ico" />
+    <link rel="icon"  type="image/png" href="/favicon/favicon-16x16.png" />
+    <link rel="icon"  type="image/png" href="/favicon/favicon-32x32.png" />
+    
 
+  <!-- Bootstrap CSS -->
   
 <link rel="stylesheet" href="/lib/bootstrap-5.1.3/css/bootstrap.min.css">
 
@@ -149,20 +158,50 @@
   
   <li class="list-style-none p-0">© 2022 <a href="mailto:wayne.gong.cn@hotmail.com" class="text-reset">Wayne Gong</a> All Rights Reserved</li>
 
-  <li class="list-style-none p-0">Powered by <a href="https://hexo.io/" class="text-reset" target="_blank" rel="noopener">Hexo</a></li>
-  <li class="list-style-none p-0">Theme by <a href="https://github.com/WayneGongCN/hexo-theme-atheme" class="text-reset" target="_blank" rel="noopener">atheme</a></li>
+  <li class="list-style-none p-0">Powered by <a href="https://hexo.io/" class="text-reset" target="_blank" rel="noopener external nofollow noreferrer">Hexo</a></li>
+  <li class="list-style-none p-0">Theme by <a href="https://github.com/WayneGongCN/hexo-theme-atheme" class="text-reset" target="_blank" rel="noopener external nofollow noreferrer">atheme</a></li>
 
   
     
-    <li class="list-style-none p-0"><a href="https://github.com/waynegongcn/waynegongcn.github.io/edit/master/source/_posts/浏览器的关键渲染路径.md" class="text-reset" target="_blank" rel="noopener">Edit Page</a></li>
+    <li class="list-style-none p-0"><a href="https://github.com/waynegongcn/waynegongcn.github.io/edit/master/source/_posts/浏览器的关键渲染路径.md" class="text-reset" target="_blank" rel="noopener external nofollow noreferrer">Edit Page</a></li>
   
 </ul>
 
 
     </footer>
 
-    <!-- 
-<script src="/lib/bootstrap-5.1.3/js/bootstrap.bundle.min.js"></script>
- -->
+
+    
+      
+  
+  
+  <!-- baidu push -->
+  <script>
+    (function () {
+      var bp = document.createElement("script");
+      var curProtocol = window.location.protocol.split(":")[0];
+      if (curProtocol === "https") {
+        bp.src = "https://zz.bdstatic.com/linksubmit/push.js";
+      } else {
+        bp.src = "http://push.zhanzhang.baidu.com/push.js";
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+  
+
+  
+  <!-- 360 push -->
+  <script>
+    (function () {
+      var src = "https://s.ssl.qhres2.com/ssl/ab77b6ea7f3fbf79.js";
+      document.write('<script src="' + src + '" id="sozz"><\/script>');
+    })();
+  </script>
+  
+
+
+    
   </body>
 </html>

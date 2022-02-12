@@ -18,11 +18,9 @@
 
   
 
+  <title>在司庆小游戏中利用漏洞屠榜 | 风灯零乱 | 一个程序员的个人博客</title>
   <meta name="title" content="在司庆小游戏中利用漏洞屠榜 | 风灯零乱 | 一个程序员的个人博客">
   <meta name="keywords" content="博客,独立开发,技术沉淀,思考总结,Web 前端">
-
-  <!-- Title -->
-  <title>在司庆小游戏中利用漏洞屠榜 | 风灯零乱 | 一个程序员的个人博客</title>
 
   <!-- OpenGraph -->
   <meta name="description" content="公司在 22 周年司庆活动期间推出了一款 H5 小游戏。 在游戏中，玩家通过控制小人躲避障碍来不断提高成绩（跑步米数），在游戏中还会随机掉落各种道具，率先收集齐全套道具的玩家则有机会获得奖品。 本着学（na）习（jiang）的精神对小游戏进行来一番研究，发现游戏存在漏洞，能通过伪造请求的方式直接刷满道具。 游戏介绍游戏内容前面已经做过简单介绍，补充一些游戏截图 ⬇️  游戏分析通过抓包，找到几个关">
@@ -40,7 +38,7 @@
 <meta property="og:image" content="https://waynegong.cn/images/2020/11/Snipaste_2020-11-11_14-47-16.png">
 <meta property="og:image" content="https://waynegong.cn/images/2020/11/95ee1c8b915bc3fb2da25839c9deaecd-1-492x1024.jpeg">
 <meta property="article:published_time" content="2020-11-10T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-02-12T10:03:37.876Z">
+<meta property="article:modified_time" content="2022-02-12T10:18:59.195Z">
 <meta property="article:author" content="Wayne Gong">
 <meta property="article:tag" content="博客">
 <meta property="article:tag" content="独立开发">
@@ -51,9 +49,16 @@
 <meta name="twitter:image" content="https://waynegong.cn/images/2020/11/48e4fd9e9ff7fdf1d70232a199273d45.jpeg">
 
   <!-- 收录验证 -->
-  <meta name="sogou_site_verification" content="Ya613VDsLE" />
-  <meta name="360-site-verification" content="cede68bb0b1448f4d5dcc6cdbdb1239d" />
-  <meta name="baidu-site-verification" content="code-CXJVSO2lgq" />
+  
+  
+    <meta name="sogou_site_verification" content="Ya613VDsLE" />
+  
+  
+    <meta name="360-site-verification" content="cede68bb0b1448f4d5dcc6cdbdb1239d" />
+  
+  
+    <meta name="baidu-site-verification" content="CXJVSO2lgq" />
+    
 
   <!-- GTM -->
   
@@ -64,10 +69,14 @@
   })(window,document,'script','dataLayer','GTM-K9CJL9P');</script>
   
 
-  <!-- Bootstrap CSS -->
+  <!-- favicon -->
   
-<link rel="stylesheet" href="/lib/bootstrap-5.1.3/css/bootstrap-reboot.min.css">
+    <link rel="icon"  href="/favicon/favicon.ico" />
+    <link rel="icon"  type="image/png" href="/favicon/favicon-16x16.png" />
+    <link rel="icon"  type="image/png" href="/favicon/favicon-32x32.png" />
+    
 
+  <!-- Bootstrap CSS -->
   
 <link rel="stylesheet" href="/lib/bootstrap-5.1.3/css/bootstrap.min.css">
 
@@ -184,20 +193,50 @@ getItems().then(<span class="hljs-function">() =&gt;</span> &#123;
   
   <li class="list-style-none p-0">© 2022 <a href="mailto:wayne.gong.cn@hotmail.com" class="text-reset">Wayne Gong</a> All Rights Reserved</li>
 
-  <li class="list-style-none p-0">Powered by <a href="https://hexo.io/" class="text-reset" target="_blank" rel="noopener">Hexo</a></li>
-  <li class="list-style-none p-0">Theme by <a href="https://github.com/WayneGongCN/hexo-theme-atheme" class="text-reset" target="_blank" rel="noopener">atheme</a></li>
+  <li class="list-style-none p-0">Powered by <a href="https://hexo.io/" class="text-reset" target="_blank" rel="noopener external nofollow noreferrer">Hexo</a></li>
+  <li class="list-style-none p-0">Theme by <a href="https://github.com/WayneGongCN/hexo-theme-atheme" class="text-reset" target="_blank" rel="noopener external nofollow noreferrer">atheme</a></li>
 
   
     
-    <li class="list-style-none p-0"><a href="https://github.com/waynegongcn/waynegongcn.github.io/edit/master/source/_posts/在司庆小游戏中利用漏洞屠榜.md" class="text-reset" target="_blank" rel="noopener">Edit Page</a></li>
+    <li class="list-style-none p-0"><a href="https://github.com/waynegongcn/waynegongcn.github.io/edit/master/source/_posts/在司庆小游戏中利用漏洞屠榜.md" class="text-reset" target="_blank" rel="noopener external nofollow noreferrer">Edit Page</a></li>
   
 </ul>
 
 
     </footer>
 
-    <!-- 
-<script src="/lib/bootstrap-5.1.3/js/bootstrap.bundle.min.js"></script>
- -->
+
+    
+      
+  
+  
+  <!-- baidu push -->
+  <script>
+    (function () {
+      var bp = document.createElement("script");
+      var curProtocol = window.location.protocol.split(":")[0];
+      if (curProtocol === "https") {
+        bp.src = "https://zz.bdstatic.com/linksubmit/push.js";
+      } else {
+        bp.src = "http://push.zhanzhang.baidu.com/push.js";
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+  
+
+  
+  <!-- 360 push -->
+  <script>
+    (function () {
+      var src = "https://s.ssl.qhres2.com/ssl/ab77b6ea7f3fbf79.js";
+      document.write('<script src="' + src + '" id="sozz"><\/script>');
+    })();
+  </script>
+  
+
+
+    
   </body>
 </html>
