@@ -15,7 +15,7 @@
     <atom:link href="https://waynegong.cn/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>一个程序员的个人博客</description>
-    <pubDate>Sun, 13 Feb 2022 13:54:31 GMT</pubDate>
+    <pubDate>Sun, 13 Feb 2022 15:13:29 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -425,6 +425,30 @@
     </item>
     
     <item>
+      <title>钻头种类与选择</title>
+      <link>https://waynegong.cn/posts/35898.html</link>
+      <guid>https://waynegong.cn/posts/35898.html</guid>
+      <pubDate>Mon, 15 Jul 2019 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;钻孔操作本质上讲是一种切削加工，完成切削加工需要满足的前提条件：&lt;strong&gt;刀具材料的硬度必须高于被加工材料的硬度&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&quot;木工钻头&quot;&gt;&lt;a href=&quot;#木工钻头&quot; class=&quot;headerlink&quot;</description>
+          
+        
+      
+      
+      
+      
+      
+      
+      <comments>https://waynegong.cn/posts/35898.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
       <title>配置 IPv6 与 Cloudflare DDNS</title>
       <link>https://waynegong.cn/posts/58085.html</link>
       <guid>https://waynegong.cn/posts/58085.html</guid>
@@ -449,16 +473,17 @@
     </item>
     
     <item>
-      <title>尾调用优化</title>
-      <link>https://waynegong.cn/posts/10156.html</link>
-      <guid>https://waynegong.cn/posts/10156.html</guid>
-      <pubDate>Wed, 10 Oct 2018 16:00:00 GMT</pubDate>
+      <title>阳光十六法则与手动测光</title>
+      <link>https://waynegong.cn/posts/6810.html</link>
+      <guid>https://waynegong.cn/posts/6810.html</guid>
+      <pubDate>Wed, 03 Apr 2019 16:00:00 GMT</pubDate>
       
         
         
           
           
-      <description>&lt;p&gt;当函数的调用层数非常多时，需要同时保存成千上百个调用记录，调用栈会消耗不少内存，甚容易导致&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%A0%88%E6%BA%A2%E5%87%BA&quot; target=&quot;_blank&quot;</description>
+      <description>&lt;p&gt;早期胶片相机通常没有测光功能，需要拍摄者通过经验估算曝光参数，阳光十六法则包含不同环境下曝光参数。&lt;/p&gt;
+&lt;h2 id=&quot;阳光十六法则&quot;&gt;&lt;a href=&quot;#阳光十六法则&quot; class=&quot;headerlink&quot;</description>
           
         
       
@@ -467,52 +492,21 @@
       
       
       
-      <comments>https://waynegong.cn/posts/10156.html#disqus_thread</comments>
+      <comments>https://waynegong.cn/posts/6810.html#disqus_thread</comments>
       
     </item>
     
     <item>
-      <title>使用 Anaconda</title>
-      <link>https://waynegong.cn/posts/50275.html</link>
-      <guid>https://waynegong.cn/posts/50275.html</guid>
-      <pubDate>Tue, 10 Jul 2018 16:00:00 GMT</pubDate>
+      <title>制作泡泡水</title>
+      <link>https://waynegong.cn/posts/34431.html</link>
+      <guid>https://waynegong.cn/posts/34431.html</guid>
+      <pubDate>Sun, 17 Mar 2019 16:00:00 GMT</pubDate>
       
         
         
           
           
-      <description>&lt;p&gt;Anaconda 是一种 Python 的免费增值开源发行版，用于进行大规模数据处理, 预测分析, 和科学计算, 致力于简化包的管理和部署。&lt;/p&gt;
-&lt;p&gt;简单来说，Anaconda 提供了一个包含 Ptyhon 、conda 以及常用第三方包的环境。&lt;/p&gt;
-&lt;h2</description>
-          
-        
-      
-      
-      
-      
-      
-      <category domain="https://waynegong.cn/tags/Python/">Python</category>
-      
-      
-      <comments>https://waynegong.cn/posts/50275.html#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>LED 限流电阻计算</title>
-      <link>https://waynegong.cn/posts/55426.html</link>
-      <guid>https://waynegong.cn/posts/55426.html</guid>
-      <pubDate>Mon, 02 Jul 2018 16:00:00 GMT</pubDate>
-      
-        
-        
-          
-          
-      <description>&lt;p&gt;LED 发光二极管主要参数：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;PM&lt;/code&gt; 允许功耗，超过会烧毁&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;IFM&lt;/code&gt; 最大正向电流，超过会烧毁&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;VRM&lt;/code&gt;</description>
+      <description>&lt;h2 id=&quot;失败的泡泡水&quot;&gt;&lt;a href=&quot;#失败的泡泡水&quot; class=&quot;headerlink&quot; title=&quot;失败的泡泡水&quot;&gt;&lt;/a&gt;失败的泡泡水&lt;/h2&gt;&lt;p&gt;小卖部买的泡泡水用完之后会自己 DIY</description>
           
         
       
@@ -521,7 +515,7 @@
       
       
       
-      <comments>https://waynegong.cn/posts/55426.html#disqus_thread</comments>
+      <comments>https://waynegong.cn/posts/34431.html#disqus_thread</comments>
       
     </item>
     

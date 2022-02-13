@@ -18,20 +18,19 @@
 
   
 
-  <title>LED 限流电阻计算 | 风灯零乱 | 一个程序员的个人博客</title>
-  <meta name="title" content="LED 限流电阻计算 | 风灯零乱 | 一个程序员的个人博客">
-  <meta name="keywords" content="博客,独立开发,技术沉淀,思考总结,Web 前端">
+  <title>Firefox 隐私设置 | 风灯零乱 | 一个程序员的个人博客</title>
+  <meta name="title" content="Firefox 隐私设置 | 风灯零乱 | 一个程序员的个人博客">
+  <meta name="keywords" content="Firefox 设置,安全隐私,博客,独立开发,技术沉淀,思考总结,Web 前端">
 
   <!-- OpenGraph -->
-  <meta name="description" content="LED 发光二极管主要参数：  PM 允许功耗，超过会烧毁 IFM 最大正向电流，超过会烧毁 VRM 最大反向电压，超过会击穿 IF 正向导通电流，一般为 0.6 * IFM VF 正向导通电压，一般为 IF &#x3D; 20mA 时取得，1.4V - 3V 不同颜色电压不同 LED 正常工作不应超过 PM、IFM、VRM 这三个极限参数。  限流电阻计算 假设 LED1 VF&#x3D;3V、IF&#x3D;20mA，电源">
+  <meta name="description" content="浏览器安全隐私安全测试Panopticlick FireFox 的隐私设置调整进入 about:config 进行如下修改  privacy.firstparty.isolate &#x3D; true privacy.resistFingerprinting &#x3D; true privacy.trackingprotection.enabled &#x3D; true browser.cache.offline.ena">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LED 限流电阻计算">
-<meta property="og:url" content="https://waynegong.cn/posts/55426.html">
+<meta property="og:title" content="Firefox 隐私设置">
+<meta property="og:url" content="https://waynegong.cn/posts/35375.html">
 <meta property="og:site_name" content="风灯零乱">
-<meta property="og:description" content="LED 发光二极管主要参数：  PM 允许功耗，超过会烧毁 IFM 最大正向电流，超过会烧毁 VRM 最大反向电压，超过会击穿 IF 正向导通电流，一般为 0.6 * IFM VF 正向导通电压，一般为 IF &#x3D; 20mA 时取得，1.4V - 3V 不同颜色电压不同 LED 正常工作不应超过 PM、IFM、VRM 这三个极限参数。  限流电阻计算 假设 LED1 VF&#x3D;3V、IF&#x3D;20mA，电源">
+<meta property="og:description" content="浏览器安全隐私安全测试Panopticlick FireFox 的隐私设置调整进入 about:config 进行如下修改  privacy.firstparty.isolate &#x3D; true privacy.resistFingerprinting &#x3D; true privacy.trackingprotection.enabled &#x3D; true browser.cache.offline.ena">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://waynegong.cn/images/2020/07/20190722121759.png">
-<meta property="article:published_time" content="2018-07-02T16:00:00.000Z">
+<meta property="article:published_time" content="2018-05-04T16:00:00.000Z">
 <meta property="article:modified_time" content="2022-02-13T15:13:29.075Z">
 <meta property="article:author" content="Wayne Gong">
 <meta property="article:tag" content="博客">
@@ -40,7 +39,6 @@
 <meta property="article:tag" content="思考总结">
 <meta property="article:tag" content="Web 前端">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://waynegong.cn/images/2020/07/20190722121759.png">
 
   <!-- 收录验证 -->
   
@@ -112,34 +110,53 @@
   
     <div class="pb-3 pt-2">
       <h1>
-        LED 限流电阻计算
+        Firefox 隐私设置
       </h1>
-      <time class="link-secondary fw-light">2018-07-03</time>
+      <time class="link-secondary fw-light">2018-05-05</time>
     </div>
   
 
   <main class="markdown-body">
-    <p>LED 发光二极管主要参数：</p>
-<ul>
-<li><code>PM</code> 允许功耗，超过会烧毁</li>
-<li><code>IFM</code> 最大正向电流，超过会烧毁</li>
-<li><code>VRM</code> 最大反向电压，超过会击穿</li>
-<li><code>IF</code> 正向导通电流，一般为 <code>0.6 * IFM</code></li>
-<li><code>VF</code> 正向导通电压，一般为 <code>IF = 20mA</code> 时取得，<code>1.4V - 3V</code> 不同颜色电压不同</li>
-<li><code>LED</code> 正常工作不应超过 <code>PM</code>、<code>IFM</code>、<code>VRM</code> 这三个极限参数。</li>
-</ul>
-<h2 id="限流电阻计算"><a href="#限流电阻计算" class="headerlink" title="限流电阻计算"></a>限流电阻计算</h2><p><img src="/images/2020/07/20190722121759.png"></p>
-<p>假设 <code>LED1</code> <code>VF=3V</code>、<code>IF=20mA</code>，电源电压为 <code>Vcc=5V</code>。</p>
-<p>则 <code>R1</code> 上分得电压 <code>Ur1 = Vcc - VF = 5 - 3 = 2V</code></p>
-<p>要是使得 <code>LED1</code> 上的电流为 <code>20mA</code>，根据 <code>R = U / I</code></p>
-<p>则 <code>R1</code> 的电阻值应该为 <code>R1 = Ur1 / IF = 2 / 0.02 = 100Ω</code></p>
-<h2 id="计算公式"><a href="#计算公式" class="headerlink" title="计算公式"></a>计算公式</h2><p>得到 LED 限流电阻计算公式为：<code>R = (UV - VF) / IF</code></p>
-<ul>
-<li><code>R</code> 限流电阻阻值；</li>
-<li><code>UV</code> 电源电压；</li>
-<li><code>VF</code> 为 LED 正向导通电压；</li>
-<li><code>IF</code> 为 LED 正向导通电流；</li>
-</ul>
+    <h2 id="浏览器安全隐私安全测试"><a href="#浏览器安全隐私安全测试" class="headerlink" title="浏览器安全隐私安全测试"></a>浏览器安全隐私安全测试</h2><p><a href="https://panopticlick.eff.org/" target="_blank" rel="noopener external nofollow noreferrer">Panopticlick</a></p>
+<h2 id="FireFox-的隐私设置调整"><a href="#FireFox-的隐私设置调整" class="headerlink" title="FireFox 的隐私设置调整"></a>FireFox 的隐私设置调整</h2><p>进入 <code>about:config</code> 进行如下修改</p>
+<ol>
+<li>privacy.firstparty.isolate = true</li>
+<li>privacy.resistFingerprinting = true</li>
+<li>privacy.trackingprotection.enabled = true</li>
+<li>browser.cache.offline.enable = false</li>
+<li>browser.safebrowsing.malware = false</li>
+<li>browser.safebrowsing.phishing.enabled = false</li>
+<li>browser.send_pings = false</li>
+<li>browser.sessionstore.max_tabs_undo = 0</li>
+<li>browser.urlbar.speculativeConnect.enabled = false</li>
+<li>dom.battery.enabled = false</li>
+<li>dom.event.clipboardevents.enabled = false</li>
+<li>geo.enabled = false</li>
+<li>media.navigator.enabled = false</li>
+<li>network.cookie.cookieBehavior = 1</li>
+<li>etwork.cookie.lifetimePolicy = 2</li>
+<li>network.http.referer.trimmingPolicy = 2</li>
+<li>network.http.referer.XOriginPolicy = 2</li>
+<li>network.http.referer.XOriginTrimmingPolicy = 2</li>
+<li>webgl.disabled = true</li>
+</ol>
+<h2 id="FireFox-取消-WebRTC"><a href="#FireFox-取消-WebRTC" class="headerlink" title="FireFox 取消 WebRTC"></a>FireFox 取消 WebRTC</h2><p>进入 <code>about:config</code> 进行如下修改</p>
+<ol>
+<li>media.peerconnection.enabled = false</li>
+<li>media.peerconnection.turn.disable = true</li>
+<li>media.peerconnection.use_document_iceservers = false</li>
+<li>media.peerconnection.video.enabled = false</li>
+<li>media.peerconnection.identity.timeout = 1</li>
+</ol>
+<h2 id="FireFox-隐私保护插件"><a href="#FireFox-隐私保护插件" class="headerlink" title="FireFox 隐私保护插件"></a>FireFox 隐私保护插件</h2><ol>
+<li>Privacy Badger 阻止不遵守DNT协议广告商的跟踪行为。</li>
+<li>uBlock Origin 内容过滤浏览器扩展</li>
+<li>Self-Destructing Cookies 自动删除 Cookies</li>
+<li>HTTPS Everywhere 对支持 HTTPS 的网站启用加密连接</li>
+<li>Decentraleyes 使用本地CDN库文件并拦截第三方库文件来提高网页加载速度并保护隐私。</li>
+<li>uMatrix 更加高级（复杂）的内容过滤工具。</li>
+<li>NoScript Security Suite 选择让 Javascript、Java 与 Flash 只能在所信任的网站上执行。</li>
+</ol>
 
   </main>
 </sectione>
@@ -155,7 +172,7 @@
 
   
     
-    <li class="list-style-none p-0"><a href="https://github.com/waynegongcn/waynegongcn.github.io/edit/master/source/_posts/LED 限流电阻计算.md" class="text-reset" target="_blank" rel="noopener external nofollow noreferrer">Edit Page</a></li>
+    <li class="list-style-none p-0"><a href="https://github.com/waynegongcn/waynegongcn.github.io/edit/master/source/_posts/Firefox隐私设置.md" class="text-reset" target="_blank" rel="noopener external nofollow noreferrer">Edit Page</a></li>
   
 </ul>
 
