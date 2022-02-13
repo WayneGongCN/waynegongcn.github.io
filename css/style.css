@@ -48,6 +48,29 @@ body {
   border-radius: 6px;
   color: #24292f;
 }
+.markdown-body table {
+  display: block;
+  width: 100%;
+  width: max-content;
+  max-width: 100%;
+  overflow: auto;
+}
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #d8dee4;
+}
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+.markdown-body table th,
+.markdown-body table td {
+  padding: 0.2em 0.4em;
+  border: 1px solid #d0d7de;
+}
+.markdown-body table th {
+  font-weight: bold;
+  text-align: center;
+}
 .tag-list-count,
 .category-list-count,
 .archive-list-count {
