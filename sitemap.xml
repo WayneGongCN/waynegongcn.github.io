@@ -38,15 +38,6 @@
   </url>
   
   <url>
-    <loc>https://waynegong.cn/posts/44115.html</loc>
-    
-    <lastmod>2022-02-13</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://waynegong.cn/posts/42055.html</loc>
     
     <lastmod>2022-02-13</lastmod>
@@ -66,6 +57,15 @@
   
   <url>
     <loc>https://waynegong.cn/posts/55064.html</loc>
+    
+    <lastmod>2022-02-13</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://waynegong.cn/posts/44115.html</loc>
     
     <lastmod>2022-02-13</lastmod>
     
@@ -200,7 +200,7 @@
   </url>
   
   <url>
-    <loc>https://waynegong.cn/404.html</loc>
+    <loc>https://waynegong.cn/categories/</loc>
     
     <lastmod>2022-02-13</lastmod>
     
@@ -209,7 +209,7 @@
   </url>
   
   <url>
-    <loc>https://waynegong.cn/categories/</loc>
+    <loc>https://waynegong.cn/404.html</loc>
     
     <lastmod>2022-02-13</lastmod>
     
@@ -241,14 +241,7 @@
   </url>
   
   <url>
-    <loc>https://waynegong.cn/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%A9%E5%B1%95%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2022-02-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://waynegong.cn/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%A9%E5%B1%95/</loc>
+    <loc>https://waynegong.cn/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2022-02-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -262,14 +255,7 @@
   </url>
   
   <url>
-    <loc>https://waynegong.cn/tags/Chrome-store/</loc>
-    <lastmod>2022-02-13</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://waynegong.cn/tags/Chrome-extension/</loc>
+    <loc>https://waynegong.cn/tags/Chrome%E6%8F%92%E4%BB%B6/</loc>
     <lastmod>2022-02-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
