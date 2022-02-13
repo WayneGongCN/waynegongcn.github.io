@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>风灯零乱</title>
+  <icon>https://waynegong.cn/icon.png</icon>
+  
+  <link href="https://waynegong.cn/atom.xml" rel="self"/>
+  
+  <link href="https://waynegong.cn/"/>
+  <updated>2022-02-13T13:54:31.129Z</updated>
+  <id>https://waynegong.cn/</id>
+  
+  <author>
+    <name>Wayne Gong</name>
+    <email>wayne.gong.cn@hotmail.com</email>
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>浏览器插件开发 - i18n 国际化多语言配置</title>
+    <link href="https://waynegong.cn/posts/954.html"/>
+    <id>https://waynegong.cn/posts/954.html</id>
+    <published>2022-02-12T02:23:58.000Z</published>
+    <updated>2022-02-13T13:54:31.129Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Chrome 浏览器插件进行 i18n 国际化多语言适配需要进行三处修改：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在特定目录按照特定格式编写多语言配置的 &lt;code&gt;messages.json&lt;/code&gt; 文件；&lt;/li&gt;
+&lt;li&gt;在</summary>
+        
+      
+    
+    
+    
+    
+    <category term="浏览器插件" scheme="https://waynegong.cn/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/"/>
+    
+    <category term="Chrome插件" scheme="https://waynegong.cn/tags/Chrome%E6%8F%92%E4%BB%B6/"/>
+    
+    <category term="i18n" scheme="https://waynegong.cn/tags/i18n/"/>
+    
+    <category term="国际化" scheme="https://waynegong.cn/tags/%E5%9B%BD%E9%99%85%E5%8C%96/"/>
+    
+    <category term="多语言" scheme="https://waynegong.cn/tags/%E5%A4%9A%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用正则表达式将 markdown 链接转换为 a 链接</title>
+    <link href="https://waynegong.cn/posts/8598.html"/>
+    <id>https://waynegong.cn/posts/8598.html</id>
+    <published>2022-02-10T15:18:12.000Z</published>
+    <updated>2022-02-13T13:54:31.129Z</updated>
+    
+    
+    <summary type="html">使用正则表达式，将 markdown 中的链接语法批量替换转换为 a 标签语法，以支持 target rel 等 a 标签属性。</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>站点 SEO - 基础配置</title>
+    <link href="https://waynegong.cn/posts/25672.html"/>
+    <id>https://waynegong.cn/posts/25672.html</id>
+    <published>2022-02-07T09:10:52.000Z</published>
+    <updated>2022-02-13T13:54:31.129Z</updated>
+    
+    
+    <summary type="html">本文介绍了对于一个新站点，最基础的 SEO 优化配置。包括域名选择与页面路径优化、title 标签与 meta 标签的注意事项，以及各大搜索引擎的收录方式。</summary>
+    
+    
+    
+    
+    <category term="SEO" scheme="https://waynegong.cn/tags/SEO/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>浏览器插件开发 - 自动发布到 Chrome 商店</title>
+    <link href="https://waynegong.cn/posts/48515.html"/>
+    <id>https://waynegong.cn/posts/48515.html</id>
+    <published>2022-01-28T16:00:00.000Z</published>
+    <updated>2022-02-13T13:54:31.129Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;目前 &lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="浏览器插件开发" scheme="https://waynegong.cn/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript 几种继承方式的差异</title>
+    <link href="https://waynegong.cn/posts/42991.html"/>
+    <id>https://waynegong.cn/posts/42991.html</id>
+    <published>2021-02-28T16:00:00.000Z</published>
+    <updated>2022-02-13T13:54:31.129Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;虽然 ES6 带来了 class 语法使得实现继承非常方便，但是了解 “老” 的继承实现，对理解 Javascript 还是非常有帮助的。&lt;/p&gt;
+&lt;h2 id=&quot;原型链继承&quot;&gt;&lt;a href=&quot;#原型链继承&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Javascript" scheme="https://waynegong.cn/tags/Javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript 中 for...in 与 for...of 的区别</title>
+    <link href="https://waynegong.cn/posts/44115.html"/>
+    <id>https://waynegong.cn/posts/44115.html</id>
+    <published>2021-02-26T16:00:00.000Z</published>
+    <updated>2022-02-13T13:54:31.129Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;TLDR：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;for…in&lt;/code&gt; 以任意顺序迭代对象的可枚举属性（包括原型链上的属性）；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;for…of&lt;/code&gt;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Javascript" scheme="https://waynegong.cn/tags/Javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript 中 let 声明的全局变量不在 window 上</title>
+    <link href="https://waynegong.cn/posts/42055.html"/>
+    <id>https://waynegong.cn/posts/42055.html</id>
+    <published>2021-02-26T16:00:00.000Z</published>
+    <updated>2022-02-13T13:54:31.129Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;code&gt;GlobalEnv&lt;/code&gt; 是一个复合环境，由 &lt;code&gt;global（顶层对象）&lt;/code&gt;和 &lt;code&gt;declsEnv（一般声明环境）&lt;/code&gt;组合而成。&lt;/p&gt;
+&lt;p&gt;在 ES6</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Javascript" scheme="https://waynegong.cn/tags/Javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在司庆小游戏中利用漏洞屠榜</title>
+    <link href="https://waynegong.cn/posts/40325.html"/>
+    <id>https://waynegong.cn/posts/40325.html</id>
+    <published>2020-11-10T16:00:00.000Z</published>
+    <updated>2022-02-13T13:54:31.129Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;公司在 22 周年司庆活动期间推出了一款 H5</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>浏览器的关键渲染路径</title>
+    <link href="https://waynegong.cn/posts/22531.html"/>
+    <id>https://waynegong.cn/posts/22531.html</id>
+    <published>2020-11-01T16:00:00.000Z</published>
+    <updated>2022-02-13T13:54:31.129Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;TLDR，页面的关键渲染路径：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;构建对象模型（Object Model）&lt;/li&gt;
+&lt;li&gt;构建 DOM（文档对象模型）&lt;/li&gt;
+&lt;li&gt;构建 CSSOM（CSS 对象模型）&lt;/li&gt;
+&lt;li&gt;构建渲染树（Render</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>JS CSS 如何阻塞页面渲染</title>
+    <link href="https://waynegong.cn/posts/49203.html"/>
+    <id>https://waynegong.cn/posts/49203.html</id>
+    <published>2020-10-24T16:00:00.000Z</published>
+    <updated>2022-02-13T13:54:31.129Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;TLDR:&lt;/p&gt;
+&lt;p&gt;CSS 和 JS 都会阻塞页面的 关键渲染路径 ，不同情况下阻塞效果不同：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;内联 JS 的执行会阻塞 DOM 构建（Layout）；&lt;/li&gt;
+&lt;li&gt;外部 JS 的加载和执行都会阻塞 DOM</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>使用 Docker 部署 WordPress</title>
+    <link href="https://waynegong.cn/posts/3527.html"/>
+    <id>https://waynegong.cn/posts/3527.html</id>
+    <published>2020-10-23T16:00:00.000Z</published>
+    <updated>2022-02-13T13:54:31.129Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;WordPress 提供了 Dockers Image，我们可以通过 Docker 的方式进行部署。由于同一台机器上部署了多个 Web 站点都需要使用 80/443 端口，所以使用 Nginx 通过域名判断并反向代理。&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>理解 Service Worker</title>
+    <link href="https://waynegong.cn/posts/23257.html"/>
+    <id>https://waynegong.cn/posts/23257.html</id>
+    <published>2020-10-20T16:00:00.000Z</published>
+    <updated>2022-02-13T13:54:31.129Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Service Worker 是一种 JavaScript Worker，通常用来充当 Web 应用程序、浏览器与网络（可用时）之间的代理服务器。&lt;/p&gt;
+&lt;p&gt;它能够劫持从 Web</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Docker 部署 Nginx、frp 实现内网穿透</title>
+    <link href="https://waynegong.cn/posts/8279.html"/>
+    <id>https://waynegong.cn/posts/8279.html</id>
+    <published>2020-03-22T16:00:00.000Z</published>
+    <updated>2022-02-13T13:54:31.129Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;由于没有公网 IP，加上黑群晖没有洗白，无法进行外网的远程连接。&lt;/p&gt;
+&lt;p&gt;通过 frp 内网穿透后可以通过 sub.domain.com:xxx 的形式访问到内网的 web 服务，但是带上端口号十分不优雅也难以记忆。&lt;/p&gt;
+&lt;p&gt;在公网服务器上部署 Nginx</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>星际蜗牛安装黑群晖</title>
+    <link href="https://waynegong.cn/posts/44040.html"/>
+    <id>https://waynegong.cn/posts/44040.html</id>
+    <published>2020-03-03T16:00:00.000Z</published>
+    <updated>2022-02-13T13:54:31.129Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;矿难捡漏的星际蜗牛， B 款单千兆网口 J1900 处理器 4GB DDR3 内存带 16GB MSata 硬盘。&lt;/p&gt;
+&lt;p&gt;一直装的是 &lt;a href=&quot;https://www.openmediavault.org/&quot; target=&quot;_blank&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>预加载属性 preload 与 prefetch 区别</title>
+    <link href="https://waynegong.cn/posts/40528.html"/>
+    <id>https://waynegong.cn/posts/40528.html</id>
+    <published>2020-03-03T16:00:00.000Z</published>
+    <updated>2022-02-13T13:54:31.129Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;TLDR:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;preload 告诉浏览器立即加载资源;&lt;/li&gt;
+&lt;li&gt;prefetch 告诉浏览器在空闲时才开始加载资源；&lt;/li&gt;
+&lt;li&gt;preload、prefetch</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>ESP8266 初体验</title>
+    <link href="https://waynegong.cn/posts/17810.html"/>
+    <id>https://waynegong.cn/posts/17810.html</id>
+    <published>2020-01-08T16:00:00.000Z</published>
+    <updated>2022-02-13T13:54:31.129Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;ESP8266 是一款由上海乐鑫信息科技开发的可以作为微控制器使用的成本极低且具有完整 TCP/IP 协议栈的 Wi-Fi IoT 控制芯片。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;简单来说就是这块芯片能连 WiFi 、能编程控制</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>配置 IPv6 与 Cloudflare DDNS</title>
+    <link href="https://waynegong.cn/posts/58085.html"/>
+    <id>https://waynegong.cn/posts/58085.html</id>
+    <published>2019-06-10T16:00:00.000Z</published>
+    <updated>2022-02-13T13:54:31.129Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;家里电信 200M 光纤宽带没有 IPv4 外网地址，尝试获取 IPv6 地址成功后，内网设备能外网直连了～&lt;/p&gt;
+&lt;h2 id=&quot;配置-IPv6&quot;&gt;&lt;a href=&quot;#配置-IPv6&quot; class=&quot;headerlink&quot; title=&quot;配置 IPv6&quot;&gt;&lt;/a&gt;配置</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>尾调用优化</title>
+    <link href="https://waynegong.cn/posts/10156.html"/>
+    <id>https://waynegong.cn/posts/10156.html</id>
+    <published>2018-10-10T16:00:00.000Z</published>
+    <updated>2022-02-13T13:54:31.129Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;当函数的调用层数非常多时，需要同时保存成千上百个调用记录，调用栈会消耗不少内存，甚容易导致&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%A0%88%E6%BA%A2%E5%87%BA&quot; target=&quot;_blank&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>使用 Anaconda</title>
+    <link href="https://waynegong.cn/posts/50275.html"/>
+    <id>https://waynegong.cn/posts/50275.html</id>
+    <published>2018-07-10T16:00:00.000Z</published>
+    <updated>2022-02-13T13:54:31.129Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Anaconda 是一种 Python 的免费增值开源发行版，用于进行大规模数据处理, 预测分析, 和科学计算, 致力于简化包的管理和部署。&lt;/p&gt;
+&lt;p&gt;简单来说，Anaconda 提供了一个包含 Ptyhon 、conda 以及常用第三方包的环境。&lt;/p&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Python" scheme="https://waynegong.cn/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LED 限流电阻计算</title>
+    <link href="https://waynegong.cn/posts/55426.html"/>
+    <id>https://waynegong.cn/posts/55426.html</id>
+    <published>2018-07-02T16:00:00.000Z</published>
+    <updated>2022-02-13T13:54:31.129Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;LED 发光二极管主要参数：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;PM&lt;/code&gt; 允许功耗，超过会烧毁&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;IFM&lt;/code&gt; 最大正向电流，超过会烧毁&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;VRM&lt;/code&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>

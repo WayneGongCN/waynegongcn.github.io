@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>风灯零乱</title>
+    <link>https://waynegong.cn/</link>
+    
+    <image>
+      <url>https://waynegong.cn/icon.png</url>
+      <title>风灯零乱</title>
+      <link>https://waynegong.cn/</link>
+    </image>
+    
+    <atom:link href="https://waynegong.cn/rss2.xml" rel="self" type="application/rss+xml"/>
+    
+    <description>一个程序员的个人博客</description>
+    <pubDate>Sun, 13 Feb 2022 13:54:31 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>浏览器插件开发 - i18n 国际化多语言配置</title>
+      <link>https://waynegong.cn/posts/954.html</link>
+      <guid>https://waynegong.cn/posts/954.html</guid>
+      <pubDate>Sat, 12 Feb 2022 02:23:58 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;Chrome 浏览器插件进行 i18n 国际化多语言适配需要进行三处修改：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在特定目录按照特定格式编写多语言配置的 &lt;code&gt;messages.json&lt;/code&gt; 文件；&lt;/li&gt;
+&lt;li&gt;在</description>
+          
+        
+      
+      
+      
+      
+      
+      <category domain="https://waynegong.cn/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6/">浏览器插件</category>
+      
+      <category domain="https://waynegong.cn/tags/Chrome%E6%8F%92%E4%BB%B6/">Chrome插件</category>
+      
+      <category domain="https://waynegong.cn/tags/i18n/">i18n</category>
+      
+      <category domain="https://waynegong.cn/tags/%E5%9B%BD%E9%99%85%E5%8C%96/">国际化</category>
+      
+      <category domain="https://waynegong.cn/tags/%E5%A4%9A%E8%AF%AD%E8%A8%80/">多语言</category>
+      
+      
+      <comments>https://waynegong.cn/posts/954.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>使用正则表达式将 markdown 链接转换为 a 链接</title>
+      <link>https://waynegong.cn/posts/8598.html</link>
+      <guid>https://waynegong.cn/posts/8598.html</guid>
+      <pubDate>Thu, 10 Feb 2022 15:18:12 GMT</pubDate>
+      
+      <description>使用正则表达式，将 markdown 中的链接语法批量替换转换为 a 标签语法，以支持 target rel 等 a 标签属性。</description>
+      
+      
+      
+      
+      
+      
+      <comments>https://waynegong.cn/posts/8598.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>站点 SEO - 基础配置</title>
+      <link>https://waynegong.cn/posts/25672.html</link>
+      <guid>https://waynegong.cn/posts/25672.html</guid>
+      <pubDate>Mon, 07 Feb 2022 09:10:52 GMT</pubDate>
+      
+      <description>本文介绍了对于一个新站点，最基础的 SEO 优化配置。包括域名选择与页面路径优化、title 标签与 meta 标签的注意事项，以及各大搜索引擎的收录方式。</description>
+      
+      
+      
+      
+      
+      <category domain="https://waynegong.cn/tags/SEO/">SEO</category>
+      
+      
+      <comments>https://waynegong.cn/posts/25672.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>浏览器插件开发 - 自动发布到 Chrome 商店</title>
+      <link>https://waynegong.cn/posts/48515.html</link>
+      <guid>https://waynegong.cn/posts/48515.html</guid>
+      <pubDate>Fri, 28 Jan 2022 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;目前 &lt;a</description>
+          
+        
+      
+      
+      
+      
+      
+      <category domain="https://waynegong.cn/tags/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91/">浏览器插件开发</category>
+      
+      
+      <comments>https://waynegong.cn/posts/48515.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Javascript 几种继承方式的差异</title>
+      <link>https://waynegong.cn/posts/42991.html</link>
+      <guid>https://waynegong.cn/posts/42991.html</guid>
+      <pubDate>Sun, 28 Feb 2021 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;虽然 ES6 带来了 class 语法使得实现继承非常方便，但是了解 “老” 的继承实现，对理解 Javascript 还是非常有帮助的。&lt;/p&gt;
+&lt;h2 id=&quot;原型链继承&quot;&gt;&lt;a href=&quot;#原型链继承&quot; class=&quot;headerlink&quot;</description>
+          
+        
+      
+      
+      
+      
+      
+      <category domain="https://waynegong.cn/tags/Javascript/">Javascript</category>
+      
+      
+      <comments>https://waynegong.cn/posts/42991.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Javascript 中 for...in 与 for...of 的区别</title>
+      <link>https://waynegong.cn/posts/44115.html</link>
+      <guid>https://waynegong.cn/posts/44115.html</guid>
+      <pubDate>Fri, 26 Feb 2021 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;TLDR：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;for…in&lt;/code&gt; 以任意顺序迭代对象的可枚举属性（包括原型链上的属性）；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;for…of&lt;/code&gt;</description>
+          
+        
+      
+      
+      
+      
+      
+      <category domain="https://waynegong.cn/tags/Javascript/">Javascript</category>
+      
+      
+      <comments>https://waynegong.cn/posts/44115.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Javascript 中 let 声明的全局变量不在 window 上</title>
+      <link>https://waynegong.cn/posts/42055.html</link>
+      <guid>https://waynegong.cn/posts/42055.html</guid>
+      <pubDate>Fri, 26 Feb 2021 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;&lt;code&gt;GlobalEnv&lt;/code&gt; 是一个复合环境，由 &lt;code&gt;global（顶层对象）&lt;/code&gt;和 &lt;code&gt;declsEnv（一般声明环境）&lt;/code&gt;组合而成。&lt;/p&gt;
+&lt;p&gt;在 ES6</description>
+          
+        
+      
+      
+      
+      
+      
+      <category domain="https://waynegong.cn/tags/Javascript/">Javascript</category>
+      
+      
+      <comments>https://waynegong.cn/posts/42055.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>在司庆小游戏中利用漏洞屠榜</title>
+      <link>https://waynegong.cn/posts/40325.html</link>
+      <guid>https://waynegong.cn/posts/40325.html</guid>
+      <pubDate>Tue, 10 Nov 2020 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;公司在 22 周年司庆活动期间推出了一款 H5</description>
+          
+        
+      
+      
+      
+      
+      
+      
+      <comments>https://waynegong.cn/posts/40325.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>浏览器的关键渲染路径</title>
+      <link>https://waynegong.cn/posts/22531.html</link>
+      <guid>https://waynegong.cn/posts/22531.html</guid>
+      <pubDate>Sun, 01 Nov 2020 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;TLDR，页面的关键渲染路径：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;构建对象模型（Object Model）&lt;/li&gt;
+&lt;li&gt;构建 DOM（文档对象模型）&lt;/li&gt;
+&lt;li&gt;构建 CSSOM（CSS 对象模型）&lt;/li&gt;
+&lt;li&gt;构建渲染树（Render</description>
+          
+        
+      
+      
+      
+      
+      
+      
+      <comments>https://waynegong.cn/posts/22531.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>JS CSS 如何阻塞页面渲染</title>
+      <link>https://waynegong.cn/posts/49203.html</link>
+      <guid>https://waynegong.cn/posts/49203.html</guid>
+      <pubDate>Sat, 24 Oct 2020 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;TLDR:&lt;/p&gt;
+&lt;p&gt;CSS 和 JS 都会阻塞页面的 关键渲染路径 ，不同情况下阻塞效果不同：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;内联 JS 的执行会阻塞 DOM 构建（Layout）；&lt;/li&gt;
+&lt;li&gt;外部 JS 的加载和执行都会阻塞 DOM</description>
+          
+        
+      
+      
+      
+      
+      
+      
+      <comments>https://waynegong.cn/posts/49203.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>使用 Docker 部署 WordPress</title>
+      <link>https://waynegong.cn/posts/3527.html</link>
+      <guid>https://waynegong.cn/posts/3527.html</guid>
+      <pubDate>Fri, 23 Oct 2020 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;WordPress 提供了 Dockers Image，我们可以通过 Docker 的方式进行部署。由于同一台机器上部署了多个 Web 站点都需要使用 80/443 端口，所以使用 Nginx 通过域名判断并反向代理。&lt;/p&gt;
+&lt;h2</description>
+          
+        
+      
+      
+      
+      
+      
+      
+      <comments>https://waynegong.cn/posts/3527.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>理解 Service Worker</title>
+      <link>https://waynegong.cn/posts/23257.html</link>
+      <guid>https://waynegong.cn/posts/23257.html</guid>
+      <pubDate>Tue, 20 Oct 2020 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;Service Worker 是一种 JavaScript Worker，通常用来充当 Web 应用程序、浏览器与网络（可用时）之间的代理服务器。&lt;/p&gt;
+&lt;p&gt;它能够劫持从 Web</description>
+          
+        
+      
+      
+      
+      
+      
+      
+      <comments>https://waynegong.cn/posts/23257.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>Docker 部署 Nginx、frp 实现内网穿透</title>
+      <link>https://waynegong.cn/posts/8279.html</link>
+      <guid>https://waynegong.cn/posts/8279.html</guid>
+      <pubDate>Sun, 22 Mar 2020 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;由于没有公网 IP，加上黑群晖没有洗白，无法进行外网的远程连接。&lt;/p&gt;
+&lt;p&gt;通过 frp 内网穿透后可以通过 sub.domain.com:xxx 的形式访问到内网的 web 服务，但是带上端口号十分不优雅也难以记忆。&lt;/p&gt;
+&lt;p&gt;在公网服务器上部署 Nginx</description>
+          
+        
+      
+      
+      
+      
+      
+      
+      <comments>https://waynegong.cn/posts/8279.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>星际蜗牛安装黑群晖</title>
+      <link>https://waynegong.cn/posts/44040.html</link>
+      <guid>https://waynegong.cn/posts/44040.html</guid>
+      <pubDate>Tue, 03 Mar 2020 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;矿难捡漏的星际蜗牛， B 款单千兆网口 J1900 处理器 4GB DDR3 内存带 16GB MSata 硬盘。&lt;/p&gt;
+&lt;p&gt;一直装的是 &lt;a href=&quot;https://www.openmediavault.org/&quot; target=&quot;_blank&quot;</description>
+          
+        
+      
+      
+      
+      
+      
+      
+      <comments>https://waynegong.cn/posts/44040.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>预加载属性 preload 与 prefetch 区别</title>
+      <link>https://waynegong.cn/posts/40528.html</link>
+      <guid>https://waynegong.cn/posts/40528.html</guid>
+      <pubDate>Tue, 03 Mar 2020 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;TLDR:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;preload 告诉浏览器立即加载资源;&lt;/li&gt;
+&lt;li&gt;prefetch 告诉浏览器在空闲时才开始加载资源；&lt;/li&gt;
+&lt;li&gt;preload、prefetch</description>
+          
+        
+      
+      
+      
+      
+      
+      
+      <comments>https://waynegong.cn/posts/40528.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>ESP8266 初体验</title>
+      <link>https://waynegong.cn/posts/17810.html</link>
+      <guid>https://waynegong.cn/posts/17810.html</guid>
+      <pubDate>Wed, 08 Jan 2020 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;blockquote&gt;
+&lt;p&gt;ESP8266 是一款由上海乐鑫信息科技开发的可以作为微控制器使用的成本极低且具有完整 TCP/IP 协议栈的 Wi-Fi IoT 控制芯片。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;简单来说就是这块芯片能连 WiFi 、能编程控制</description>
+          
+        
+      
+      
+      
+      
+      
+      
+      <comments>https://waynegong.cn/posts/17810.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>配置 IPv6 与 Cloudflare DDNS</title>
+      <link>https://waynegong.cn/posts/58085.html</link>
+      <guid>https://waynegong.cn/posts/58085.html</guid>
+      <pubDate>Mon, 10 Jun 2019 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;家里电信 200M 光纤宽带没有 IPv4 外网地址，尝试获取 IPv6 地址成功后，内网设备能外网直连了～&lt;/p&gt;
+&lt;h2 id=&quot;配置-IPv6&quot;&gt;&lt;a href=&quot;#配置-IPv6&quot; class=&quot;headerlink&quot; title=&quot;配置 IPv6&quot;&gt;&lt;/a&gt;配置</description>
+          
+        
+      
+      
+      
+      
+      
+      
+      <comments>https://waynegong.cn/posts/58085.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>尾调用优化</title>
+      <link>https://waynegong.cn/posts/10156.html</link>
+      <guid>https://waynegong.cn/posts/10156.html</guid>
+      <pubDate>Wed, 10 Oct 2018 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;当函数的调用层数非常多时，需要同时保存成千上百个调用记录，调用栈会消耗不少内存，甚容易导致&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%A0%88%E6%BA%A2%E5%87%BA&quot; target=&quot;_blank&quot;</description>
+          
+        
+      
+      
+      
+      
+      
+      
+      <comments>https://waynegong.cn/posts/10156.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>使用 Anaconda</title>
+      <link>https://waynegong.cn/posts/50275.html</link>
+      <guid>https://waynegong.cn/posts/50275.html</guid>
+      <pubDate>Tue, 10 Jul 2018 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;Anaconda 是一种 Python 的免费增值开源发行版，用于进行大规模数据处理, 预测分析, 和科学计算, 致力于简化包的管理和部署。&lt;/p&gt;
+&lt;p&gt;简单来说，Anaconda 提供了一个包含 Ptyhon 、conda 以及常用第三方包的环境。&lt;/p&gt;
+&lt;h2</description>
+          
+        
+      
+      
+      
+      
+      
+      <category domain="https://waynegong.cn/tags/Python/">Python</category>
+      
+      
+      <comments>https://waynegong.cn/posts/50275.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>LED 限流电阻计算</title>
+      <link>https://waynegong.cn/posts/55426.html</link>
+      <guid>https://waynegong.cn/posts/55426.html</guid>
+      <pubDate>Mon, 02 Jul 2018 16:00:00 GMT</pubDate>
+      
+        
+        
+          
+          
+      <description>&lt;p&gt;LED 发光二极管主要参数：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;PM&lt;/code&gt; 允许功耗，超过会烧毁&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;IFM&lt;/code&gt; 最大正向电流，超过会烧毁&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;VRM&lt;/code&gt;</description>
+          
+        
+      
+      
+      
+      
+      
+      
+      <comments>https://waynegong.cn/posts/55426.html#disqus_thread</comments>
+      
+    </item>
+    
+  </channel>
+</rss>
