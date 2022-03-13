@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "inital": "git submodule init && git submodule update && yarn install",
     "new": "hexo new",
     "draft": "hexo new draft",
     "start": "hexo server",
@@ -27,7 +28,6 @@
     "hexo-generator-tag": "^1.0.0",
     "hexo-renderer-ejs": "^2.0.0",
     "hexo-renderer-marked": "^4.1.0",
-    "hexo-renderer-sass": "^0.4.0",
     "hexo-renderer-stylus": "^2.0.0",
     "hexo-server": "^3.0.0"
   }

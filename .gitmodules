@@ -1,3 +1,3 @@
 [submodule "themes/atheme"]
 	path = themes/atheme
-	url = git@github.com:WayneGongCN/hexo-theme-atheme.git
+	url = https://github.com/WayneGongCN/hexo-theme-atheme.git
