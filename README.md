@@ -1,3 +1,3 @@
-# A Blog
+## A Blog
 
 https://waynegong.cn

@@ -14,14 +14,14 @@ Anaconda 是一种 Python 的免费增值开源发行版，用于进行大规模
 简单来说，Anaconda 提供了一个包含 Ptyhon 、conda 以及常用第三方包的环境。
 
 
-## 功能
+### 功能
 
 在 Anaconda 下，不同的项目使用独立的开发环境，不同的开发环境下使用不同的 Python 版本，并且包互相隔离。
 
-## 安装
+### 安装
 [官方](https://www.anaconda.com/download/) 、[镜像](https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/) 下载安装。
 
-## conda
+### conda
 
 conda 的主要功能就是 环境管理 与 包管理。
 
@@ -31,7 +31,7 @@ conda 的主要功能就是 环境管理 与 包管理。
 
 不同的是 conda 将几乎所有的工具、第三方包都当做 package 对待，比如 VScode 是一个 package，不同版本的 Python 是一个 package, conda 本身也是一个 package。
 
-## 管理 conda
+### 管理 conda
 
 Windows 下如果已经将 `%Anaconda%/Scripts` 添加到环境变量，可以直接在 Cmd 下使用， 没有添加的可以从开始菜单找到 Anaconda Prompt 启动开始使用。
 
@@ -40,10 +40,10 @@ Windows 下如果已经将 `%Anaconda%/Scripts` 添加到环境变量，可以�
 ```
 conda --version
 conda update conda
-# Proceed([y]/n)? y
+## Proceed([y]/n)? y
 ```
 
-## 管理环境
+### 管理环境
 
 可以使用 `conda info --envs` 查看所有的环境，conda 会有一个默认环境 root， 其中带 * 号的为当前环境。
 
@@ -59,7 +59,7 @@ linux/macOs 下应使用 `source activate snowflakes` 或 `source deactivate`。
 
 新环境中的 Python 版本与安装 Anaconda 的 Python 版本相同， 可以使用 `conda create --name snakes python=3.5` 指定所需的 Python 版本。
 
-## 管理包
+### 管理包
 
 查看当前环境下的包：`conda list`
 

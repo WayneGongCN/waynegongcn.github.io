@@ -3,6 +3,7 @@ title: 关于
 hideTitle: true
 abbrlink: 23630
 date: 2022-02-13 00:00:00
+comments: true
 ---
 
 Hi 欢迎访问我的博客。

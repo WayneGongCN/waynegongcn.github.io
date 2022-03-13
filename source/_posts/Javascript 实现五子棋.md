@@ -19,7 +19,7 @@ Dome: https://waynegongcn.github.io/javascript-five-chess/
 
 Repo: https://github.com/helloAwei/javascript-five-chess
 
-## 生成二维数组
+### 生成二维数组
 
 生成一个 15*15 的二维数组， 并设置其初始状态，List[y][x]能取到对应格子的状态。
 
@@ -40,7 +40,7 @@ function GeneratorList() {
 }
 ```
 
-## 落子
+### 落子
 
 落子前进行判断，落子，然后添加一条历史记录，判断输赢、换手：
 
@@ -66,7 +66,7 @@ ViewModel.prototype.down = function (data) {
 }
 ```
 
-## 判断输赢的算法
+### 判断输赢的算法
 
 判断胜负需要检查一个棋子的八个方向上有无五连珠的情况。 
 

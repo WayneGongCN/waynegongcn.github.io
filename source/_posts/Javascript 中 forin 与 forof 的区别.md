@@ -12,7 +12,7 @@ TLDR：
 
 - `for…of` 遍历迭代对象定义要迭代的数据；
 
-## Object 类型
+### Object 类型
 
 ```javascript 
 const obj = {
@@ -30,7 +30,7 @@ for (const item of obj) {   // TypeError: obj is not iterable
 }
 ```
 
-### for...in Object
+#### for...in Object
 
 `for…in` 迭代对象的可枚举属性，所以输出：name、age；
 
@@ -39,7 +39,7 @@ for (const item of obj) {   // TypeError: obj is not iterable
 直接通过赋值和属性初始化的属性，属性描述符 `enumerable` 默认为 `true`；
 
 
-### for...of Object
+#### for...of Object
 
 `for…of` 遍历迭代对象定义的数据；
 
@@ -55,7 +55,7 @@ Symbol.iterator in []
 // true
 ```
 
-## Array 类型
+### Array 类型
 
 ```javascript
 Object.prototype.objCustom = function() {};
@@ -73,7 +73,7 @@ for (const item of arr) {
 }
 ```
 
-### for...in Array
+#### for...in Array
 
 `for…in` 遍历 `Array` 类型时依然遵循遍历所有可枚举属性原则；
 
@@ -84,15 +84,15 @@ for (const item of arr) {
 但是即使使用 `hasOwnProperty` 也只能过滤继承而来的可枚举属性，而自身的可枚举属性依然会被 `for…in` 遍历；
 
 
-### for...of Array
+#### for...of Array
 
 在 `for…of` 中，由于 `Array` 类型是内置可迭代对象，所以会按照 `@@iterator` 定义的规则来进行迭代；
 
 所以 “`for…of` 用来迭代对象的 `value`” 这样描述并不准确，仅仅是因为在内置默认的迭代器中返回了对象的 `value`，对于迭代器的默认行为我们完全可以自定义其规则；
 
-## 其他数据类型
+### 其他数据类型
 
-### String
+#### String
 
 ```javascript
 const str = 'hello'
@@ -106,7 +106,7 @@ for (const item of str) {
 }
 ```
 
-### Set
+#### Set
 
 ```javascript
 const set = new Set([1,2,3,4,5])
@@ -120,7 +120,7 @@ for (const item of set) {
 }
 ```
 
-### 内置可迭代对象
+#### 内置可迭代对象
 
 从数据类型的支持程度来看 `for…of` 要优于 `for…in`。
 

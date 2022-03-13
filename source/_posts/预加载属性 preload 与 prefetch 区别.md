@@ -18,11 +18,11 @@ TLDR:
 - preload、prefetch 均能设置、命中缓存；
 - 正确使用 preload、prefetch 不会导致重复请求；
 
-## 测试 Demo
+### 测试 Demo
 
 [waynegongcn/preload-prefetch](https://github.com/waynegongcn/preload-prefetch)
 
-## 优先级
+### 优先级
 
 修改 `index.html` 为如下内容：
 
@@ -54,7 +54,7 @@ TLDR:
 
 `preload` 优先级高于 `prefetch`；
 
-## 终止请求与缓存
+### 终止请求与缓存
 
 修改 `index.html` 为如下内容：
 
@@ -90,7 +90,7 @@ TLDR:
 在资源有设置缓存的情况下，通过 preload 与 prefetch 加载资源缓存均能生效；
 
 
-## 重复请求
+### 重复请求
 
 为了验证使用预加载属性时是否会导致重复的网络请求，修改 `index.html` 如下：
 

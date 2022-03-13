@@ -14,14 +14,14 @@ keywords:
 - 必应
 ---
 
-## 域名与页面路径
+### 域名与页面路径
 
 - 为站点配置域名，不要使用 IP 地址；
 - 尽可能使用顶级域名，例如 `example.com` 而非 `sub.example.com`；
 - 为站点的页面配置永久链接，不要使用 query 参数来区分页面；
 - 页面路径尽可能简短，减少非必要层级；
 
-## 页面标题 title
+### 页面标题 title
 
 页面标题 `<title>balabala ...</title>` 将作为搜索结果的标题显示，在 SEO 中权重占比最高。
 
@@ -30,9 +30,9 @@ keywords:
 - 避免堆砌关键词；
 - 页面标题在站点中尽可能唯一；
 
-## Meta 标签
+### Meta 标签
 
-### 描述 Description
+#### 描述 Description
 
 页面描述 `<meta name="description" content="some text">` 在搜索结果标题下方展示，作为标题的补充与内容的摘要。对于提高点击率有非常重要的作用。
 
@@ -40,13 +40,13 @@ keywords:
  - 避免重复内容、关键字堆砌；
  - 避免使用双引号防止截断；
 
-## 站点地图 sitemap
+### 站点地图 sitemap
 
 站点地图用来帮助搜索引擎爬虫发现站点的页面，各大搜索引擎均支持通过 sitemap 进行页面收录。
 
 sitemap 通常放置在站点的根路径下，通常为 xml 格式，各站点生成工具均有对应的 sitemap 生成工具。
 
-## 搜索引擎收录
+### 搜索引擎收录
 
 - [Google Console](https://search.google.com/search-console/about)
 - [Bing WebMaster](https://www.bing.com/webmasters)
@@ -56,7 +56,7 @@ sitemap 通常放置在站点的根路径下，通常为 xml 格式，各站点�
 
 
 
-## 参考链接
+### 参考链接
 
 [Title | MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/title#:~:text=%E9%81%BF%E5%85%8D%E4%BD%BF%E7%94%A8%E4%B8%80,%E7%BB%93%E6%9E%9C%E4%B8%8D%E5%87%86%E7%A1%AE%E3%80%82)
 

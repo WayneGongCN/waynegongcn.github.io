@@ -12,12 +12,12 @@ keywords:
 - 持续部署
 ---
 
-## 背景
+### 背景
 目前 [microsoft-todo-browser-ext](https://github.com/WayneGongCN/microsoft-todo-browser-ext) 在代码提交到 master 分支后，会自动执行 [GitHub Action](https://github.com/WayneGongCN/microsoft-todo-browser-ext/actions) 进行构建，但发布过程仍然需要人工进行手动发布。
 
 为了解决这类重复性操作，减少可能出现的操作失误，将发布过程通过自动化完成。
 
-## 方案
+### 方案
 当 master 分支触发 tag push 事件后，开始启动 [Github Action](https://github.com/WayneGongCN/microsoft-todo-browser-ext/actions) 进行 CI 构建，构建完成后通过脚本将构建的产物上传到 Chrom Store，并进行自动（或手动）发布。
 
  [Chrome Web Store API](https://developer.chrome.com/docs/webstore/api_index/) 提供了上传、发布 Chrome 插件的相关接口，在 [Google Cloud Platform](https://console.cloud.google.com/home/dashboard) 注册应用并进行简单的配置即可使用。
@@ -25,9 +25,9 @@ keywords:
  [chrome-webstore-upload](https://github.com/fregante/chrome-webstore-upload) 这个开源库将 [Chrome Web Store API](https://developer.chrome.com/docs/webstore/api_index/) 进行了封装，简化了鉴权、文件上传的流程，同时还提供了 [CLI 程序](https://github.com/fregante/chrome-webstore-upload-cli) 。
 
  
-## 实现
+### 实现
 
-### 前置步骤
+#### 前置步骤
  [chrome-webstore-upload](https://github.com/fregante/chrome-webstore-upload) 的使用方式已有详细的 [说明文档](https://github.com/fregante/chrome-webstore-upload/blob/main/How%20to%20generate%20Google%20API%20keys.md) 简单来说分为下面几个步骤：
 
 1. 在 Google Cloud PlatForm [创建一个项目](https://console.developers.google.com/apis/credentials)；
@@ -52,7 +52,7 @@ https://accounts.google.com/o/oauth2/auth?response_type=code&scope=https%3A%2F%2
 9. 保存上面获得的 `clientId` 和 `refresh_token` 开始编写上传脚本；
 
 
-### 编写脚本
+#### 编写脚本
 上传脚本 `path/to/upload.js`
 
 ```javascript
@@ -75,7 +75,7 @@ store.publish(target).then(res => {
 });
 ```
 
-### package.json 配置
+#### package.json 配置
 ```json
 {
   "script": {
@@ -85,6 +85,6 @@ store.publish(target).then(res => {
 }
 ```
  
-### Github Action 配置
+#### Github Action 配置
 
 Github Action 配置参考 [upload.yml](https://github.com/WayneGongCN/microsoft-todo-browser-ext/blob/main/.github/workflows/upload.yml)

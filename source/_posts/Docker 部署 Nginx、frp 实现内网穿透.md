@@ -12,7 +12,7 @@ tags:
 
 在公网服务器上部署 Nginx 反向代理到 frp 的特定端口，即可在使用内网服务时不需要端口号了。
 
-## 服务端部署
+### 服务端部署
 
 通过 docker-compose 启动 Dcoker 容器，保持 Nginx 与 frp 两个容器在同一个 Network 下即可在 nginx 容器中将请求转发到 frp 容器。
 
@@ -22,7 +22,7 @@ tags:
 - [Nginx 镜像](https://hub.docker.com/_/nginx)
 - [snowdreamtech/frps 镜像](https://hub.docker.com/r/snowdreamtech/frps)
 
-## 目录结构
+### 目录结构
 
 ```
 .
@@ -106,6 +106,6 @@ custom_domains = sub.domain.com
 
 完成所有配置之后在 docker-compose.yml 所在的目录执行 docker-compose up 完成验证即可。
 
-## 验证
+### 验证
 
 按照上述配置之后，原来通过 sub.domain.com:8888 才能访问的内网 web 服务现在只需要通过 sub.domain.com 访问即可。

@@ -18,13 +18,13 @@ CSS 和 JS 都会阻塞页面的 关键渲染路径 ，不同情况下阻塞效�
 - `script` 标签的 `async` 和 `derfer` 属性能使 JS 的加载不阻塞 DOM 构建；
 
 
-## 测试 Demo
+### 测试 Demo
 
 为了验证关键渲染路径是如何被阻塞，可以运行一个 Web Server，并通过浏览器调试工具（Chrome DevTools – Performance）观察页面渲染过程。
 
 一个简单的 [Demo](https://github.com/zowiegong/critical-rendering-path)
 
-## JS 如何阻塞页面渲染
+### JS 如何阻塞页面渲染
 
 由于 JS 可能会修改 DOM，所以运行 JS 和构建 DOM 不能同时进行，所以 JS 会对页面渲染造成较大的影响。
 
@@ -34,7 +34,7 @@ CSS 和 JS 都会阻塞页面的 关键渲染路径 ，不同情况下阻塞效�
 2. 外部链接引入的 JS
 3. 外部链接并使用 async、defer 属性的 JS
 
-### 内联 JS 对页面渲染的影响
+#### 内联 JS 对页面渲染的影响
 
 修改 Demo 代码 `demo/static/index.html`:
 ```html
@@ -63,7 +63,7 @@ Parse HTML（构建 DOM）只需要 0.3ms，而 JS 却阻塞了 19.9ms，整个 
 
 可以得出结论，内联 JS 的执行会阻塞关键渲染路径。
 
-## 外链 JS 对页面渲染的影响
+### 外链 JS 对页面渲染的影响
 
 修改 Demo 代码 `demo/static/index.html`:
 
@@ -98,7 +98,7 @@ Parse HTML（构建 DOM）只需要 0.3ms，而 JS 却阻塞了 19.9ms，整个 
 可以得出结论，**外链形式引入 JS 的加载、执行都会阻塞关键渲染路径**。
 
 
-### async、derfer 属性对页面渲染的影响
+#### async、derfer 属性对页面渲染的影响
 
 [MDN 对这两个属性的解释](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/script)：
 
@@ -137,7 +137,7 @@ Parse HTML（构建 DOM）只需要 0.3ms，而 JS 却阻塞了 19.9ms，整个 
 
 可以得出结论，`async`、`defer` 属性都可以使外链引入的 JS 不阻塞 Parse HTML（DOM 构建）。
 
-## CSS 资源如何阻塞页面渲染
+### CSS 资源如何阻塞页面渲染
 
 不同于 JS，CSS 不会修改 DOM 所以不会阻塞构建 DOM，所以构建 DOM 与构建 CSSOM 井水不犯河水。
 
@@ -158,7 +158,7 @@ Parse HTML（构建 DOM）只需要 0.3ms，而 JS 却阻塞了 19.9ms，整个 
 证明 CSS 会导致关键渲染路径阻塞。
 
 
-## 当 JS 遇见 CSS
+### 当 JS 遇见 CSS
 
 上述情况只讨论了 HTML + JS、HTML + CSS 的情况，如果 HTML、JS、CSS 都同时存在，对页面渲染又会有什么影响？
 
@@ -188,7 +188,7 @@ JS 之所以会阻塞 DOM 构建是因为 JS 可能会修改 DOM，所以只能�
 可以发现，即使 `block.js?t=200` 比 `block.css?t=300` 先加载完成，但他并没有立即执行，而是等待 `block.css?t=300` 加载完成后才执行。
 
 
-## CSS 为什么需要在页面头部
+### CSS 为什么需要在页面头部
 
 CSS 不会阻塞 DOM 构建，但却会阻塞渲染树构建，从而阻塞布局影响关键渲染流程。
 
@@ -200,7 +200,7 @@ CSS 不会阻塞 DOM 构建，但却会阻塞渲染树构建，从而阻塞布�
 
 另外对于体积较大的 CSS 资源建议以外部链接的方式加载，这样则能充分利用缓存减少请求时间。
 
-## JS 为什么需要在页面底部
+### JS 为什么需要在页面底部
 
 `script` 标签在不设置 `async`、`defer` 属性的情况下，会阻塞 DOM 构建。
 

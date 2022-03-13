@@ -11,7 +11,7 @@ tags:
 
 WordPress 提供了 Dockers Image，我们可以通过 Docker 的方式进行部署。由于同一台机器上部署了多个 Web 站点都需要使用 80/443 端口，所以使用 Nginx 通过域名判断并反向代理。
 
-## 部署 WordPress
+### 部署 WordPress
 [WordPress Docker Image](https://hub.docker.com/_/wordpress)
 
 新建目录，配置 `docker-compose.yml` 配置文件：
@@ -60,7 +60,7 @@ networks:
     default:
 ```
 
-## 配置 Nginx
+### 配置 Nginx
 
 编辑 Nginx 的配置文件 `nginx/conf/conf.d/default.conf` 将访问 `waynegong.cn:80` 的请求转发到 WordPress 容器中：
 

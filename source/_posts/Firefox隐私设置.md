@@ -9,10 +9,10 @@ abbrlink: 35375
 date: 2018-05-05 00:00:00
 ---
 
-## 浏览器安全隐私安全测试
+### 浏览器安全隐私安全测试
 [Panopticlick](https://panopticlick.eff.org/)
 
-## FireFox 的隐私设置调整
+### FireFox 的隐私设置调整
 进入 `about:config` 进行如下修改
 1. privacy.firstparty.isolate = true
 2. privacy.resistFingerprinting = true
@@ -34,7 +34,7 @@ date: 2018-05-05 00:00:00
 18. network.http.referer.XOriginTrimmingPolicy = 2
 19. webgl.disabled = true
 
-## FireFox 取消 WebRTC
+### FireFox 取消 WebRTC
 进入 `about:config` 进行如下修改
 1. media.peerconnection.enabled = false
 2. media.peerconnection.turn.disable = true
@@ -42,7 +42,7 @@ date: 2018-05-05 00:00:00
 4. media.peerconnection.video.enabled = false
 5. media.peerconnection.identity.timeout = 1
 
-## FireFox 隐私保护插件
+### FireFox 隐私保护插件
 1. Privacy Badger 阻止不遵守DNT协议广告商的跟踪行为。
 2. uBlock Origin 内容过滤浏览器扩展
 3. Self-Destructing Cookies 自动删除 Cookies
