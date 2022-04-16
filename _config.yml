@@ -3,16 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 过期胶卷
-description: 一个程序员的个人博客
+title: 
+description: 一个博客
 keywords:
-  - 博客
-  - 独立开发
-  - 技术沉淀
-  - 思考总结
-  - Web 前端
+  - 开发者
+  - 记录生活
 author: Wayne Gong
-email: wayne.gong.cn@hotmail.com
+email: me@waynegong.cn
 language: zh-CN
 timezone: Asia/Shanghai
 repo: https://github.com/waynegongcn/waynegongcn.github.io
