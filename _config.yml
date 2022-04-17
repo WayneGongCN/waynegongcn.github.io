@@ -103,8 +103,6 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: atheme
 
-GTM_ID: GTM-K9CJL9P
-
 sitemap:
   path: sitemap.xml
   rel: false
@@ -119,7 +117,7 @@ feed:
   path:
     - atom.xml
     - rss2.xml
-  limit: 10
+  limit: 100
   hub:
   content: true
   order_by: -date
