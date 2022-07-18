@@ -1,7 +1,8 @@
 ---
 title: 《了不起的盖茨比》读书笔记
-date: 2022-07-18 10:37:55
 tags: 读书笔记
+abbrlink: 31945
+date: 2022-07-18 10:37:55
 keywords:
 description:
 ---
